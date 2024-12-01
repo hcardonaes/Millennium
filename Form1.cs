@@ -75,5 +75,12 @@ namespace MillenniumApp
             familiasForm.ShowDialog();
         }
 
+
+        private void btnLugaresForm_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia de LugaresForm
+            LugaresForm lugaresForm = new LugaresForm();
+            lugaresForm.ShowDialog();
+        }
     }
 }

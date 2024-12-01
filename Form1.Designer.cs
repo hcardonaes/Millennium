@@ -31,6 +31,7 @@
             this.dgvPersonajes = new System.Windows.Forms.DataGridView();
             this.btnAgregarPersonaje = new System.Windows.Forms.Button();
             this.btnFamiliasForm = new System.Windows.Forms.Button();
+            this.btnLugaresForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,11 +67,22 @@
             this.btnFamiliasForm.UseVisualStyleBackColor = true;
             this.btnFamiliasForm.Click += new System.EventHandler(this.btnFamiliasForm_Click);
             // 
+            // btnLugaresForm
+            // 
+            this.btnLugaresForm.Location = new System.Drawing.Point(838, 141);
+            this.btnLugaresForm.Name = "btnLugaresForm";
+            this.btnLugaresForm.Size = new System.Drawing.Size(75, 23);
+            this.btnLugaresForm.TabIndex = 3;
+            this.btnLugaresForm.Text = "Lugares";
+            this.btnLugaresForm.UseVisualStyleBackColor = true;
+            this.btnLugaresForm.Click += new System.EventHandler(this.btnLugaresForm_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 450);
+            this.Controls.Add(this.btnLugaresForm);
             this.Controls.Add(this.btnFamiliasForm);
             this.Controls.Add(this.btnAgregarPersonaje);
             this.Controls.Add(this.dgvPersonajes);
@@ -86,6 +98,7 @@
         private System.Windows.Forms.DataGridView dgvPersonajes;
         private System.Windows.Forms.Button btnAgregarPersonaje;
         private System.Windows.Forms.Button btnFamiliasForm;
+        private System.Windows.Forms.Button btnLugaresForm;
     }
 }
 
