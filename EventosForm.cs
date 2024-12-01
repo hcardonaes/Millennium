@@ -138,5 +138,92 @@ namespace MillenniumApp
             return null;
         }
 
+        private void dgvEventos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar que el índice de fila es válido
+            if (e.RowIndex >= 0 && e.RowIndex < dgvEventos.Rows.Count)
+            {
+                // Obtener la fila seleccionada
+                DataGridViewRow row = dgvEventos.Rows[e.RowIndex];
+
+                // Cargar los valores en los TextBox
+                txtId.Text = row.Cells["id"].Value.ToString(); // Asegúrate de que el nombre de la columna coincide
+                txtNombre.Text = row.Cells["nombre"].Value.ToString();
+                txtDiaInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "dia");
+                txtMesInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "mes");
+                txtAñoInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "anio");
+                txtDiaFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "dia");
+                txtMesFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "mes");
+                txtAñoFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "anio");
+                cmbLugar.SelectedValue = row.Cells["lugar"].Value; // Asegúrate de que el valor coincide con el ComboBox
+                txtDescripcion.Text = row.Cells["descripcion"].Value.ToString();
+            }
+        }
+
+        private string ObtenerParteFecha(string fecha, string parte)
+        {
+            if (string.IsNullOrWhiteSpace(fecha)) return "";
+            var partes = fecha.Split('-');
+            return parte switch
+            {
+                "dia" => partes.Length > 2 ? partes[2] : "",
+                "mes" => partes.Length > 1 ? partes[1] : "",
+                "anio" => partes.Length > 0 ? partes[0] : "",
+                _ => ""
+            };
+        }
+
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show("El campo 'Nombre' es obligatorio.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int id = Convert.ToInt32(txtId.Text);
+            string nombre = txtNombre.Text;
+            string fechaInicio = FormatearFecha(txtDiaInicio.Text, txtMesInicio.Text, txtAñoInicio.Text);
+            string fechaFin = FormatearFecha(txtDiaFin.Text, txtMesFin.Text, txtAñoFin.Text);
+            int lugarId = Convert.ToInt32(cmbLugar.SelectedValue);
+            string descripcion = txtDescripcion.Text;
+
+            if (fechaInicio == null || fechaFin == null)
+            {
+                MessageBox.Show("Las fechas no son válidas.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string connectionString = "Data Source=Millennium.db;Version=3;";
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Actualizar el evento
+                    string query = "UPDATE eventos SET nombre = @nombre, fecha_inicio = @fechaInicio, fecha_fin = @fechaFin, lugar_id = @lugarId, descripcion = @descripcion WHERE id = @id";
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@nombre", nombre);
+                        command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                        command.Parameters.AddWithValue("@fechaFin", fechaFin);
+                        command.Parameters.AddWithValue("@lugarId", lugarId);
+                        command.Parameters.AddWithValue("@descripcion", descripcion);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Evento actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarEventos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar el evento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
     }
 }

@@ -48,47 +48,54 @@
             // dgvEventos
             // 
             this.dgvEventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEventos.Location = new System.Drawing.Point(208, 12);
+            this.dgvEventos.Location = new System.Drawing.Point(164, 8);
+            this.dgvEventos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvEventos.Name = "dgvEventos";
             this.dgvEventos.RowHeadersWidth = 62;
             this.dgvEventos.RowTemplate.Height = 28;
-            this.dgvEventos.Size = new System.Drawing.Size(580, 426);
+            this.dgvEventos.Size = new System.Drawing.Size(616, 341);
             this.dgvEventos.TabIndex = 0;
+            this.dgvEventos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEventos_CellClick);
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(13, 22);
+            this.txtId.Location = new System.Drawing.Point(9, 14);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 26);
+            this.txtId.Size = new System.Drawing.Size(68, 20);
             this.txtId.TabIndex = 1;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(12, 54);
+            this.txtNombre.Location = new System.Drawing.Point(8, 35);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 26);
+            this.txtNombre.Size = new System.Drawing.Size(68, 20);
             this.txtNombre.TabIndex = 2;
             // 
             // cmbLugar
             // 
             this.cmbLugar.FormattingEnabled = true;
-            this.cmbLugar.Location = new System.Drawing.Point(12, 174);
+            this.cmbLugar.Location = new System.Drawing.Point(8, 113);
+            this.cmbLugar.Margin = new System.Windows.Forms.Padding(2);
             this.cmbLugar.Name = "cmbLugar";
-            this.cmbLugar.Size = new System.Drawing.Size(121, 28);
+            this.cmbLugar.Size = new System.Drawing.Size(82, 21);
             this.cmbLugar.TabIndex = 9;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 234);
+            this.txtDescripcion.Location = new System.Drawing.Point(8, 152);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(100, 26);
+            this.txtDescripcion.Size = new System.Drawing.Size(91, 20);
             this.txtDescripcion.TabIndex = 10;
             // 
             // btnAgregarEvento
             // 
-            this.btnAgregarEvento.Location = new System.Drawing.Point(13, 281);
+            this.btnAgregarEvento.Location = new System.Drawing.Point(9, 172);
+            this.btnAgregarEvento.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarEvento.Name = "btnAgregarEvento";
-            this.btnAgregarEvento.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarEvento.Size = new System.Drawing.Size(91, 33);
             this.btnAgregarEvento.TabIndex = 11;
             this.btnAgregarEvento.Text = "Agregar";
             this.btnAgregarEvento.UseVisualStyleBackColor = true;
@@ -96,81 +103,72 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(14, 320);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(9, 205);
+            this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(91, 33);
             this.btnGuardarCambios.TabIndex = 12;
             this.btnGuardarCambios.Text = "Guarda";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
             // btnEliminarEvento
             // 
-            this.btnEliminarEvento.Location = new System.Drawing.Point(14, 359);
+            this.btnEliminarEvento.Location = new System.Drawing.Point(9, 238);
+            this.btnEliminarEvento.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarEvento.Name = "btnEliminarEvento";
-            this.btnEliminarEvento.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarEvento.Size = new System.Drawing.Size(91, 33);
             this.btnEliminarEvento.TabIndex = 13;
             this.btnEliminarEvento.Text = "Elimina";
             this.btnEliminarEvento.UseVisualStyleBackColor = true;
             // 
             // txtAñoFin
             // 
-            this.txtAñoFin.Location = new System.Drawing.Point(145, 126);
-            this.txtAñoFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAñoFin.Location = new System.Drawing.Point(97, 82);
             this.txtAñoFin.Name = "txtAñoFin";
-            this.txtAñoFin.Size = new System.Drawing.Size(56, 26);
+            this.txtAñoFin.Size = new System.Drawing.Size(39, 20);
             this.txtAñoFin.TabIndex = 32;
-            this.txtAñoFin.Visible = false;
             // 
             // txtMesFin
             // 
-            this.txtMesFin.Location = new System.Drawing.Point(77, 126);
-            this.txtMesFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMesFin.Location = new System.Drawing.Point(51, 82);
             this.txtMesFin.Name = "txtMesFin";
-            this.txtMesFin.Size = new System.Drawing.Size(56, 26);
+            this.txtMesFin.Size = new System.Drawing.Size(39, 20);
             this.txtMesFin.TabIndex = 31;
-            this.txtMesFin.Visible = false;
             // 
             // txtDiaFin
             // 
-            this.txtDiaFin.Location = new System.Drawing.Point(9, 128);
-            this.txtDiaFin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDiaFin.Location = new System.Drawing.Point(6, 83);
             this.txtDiaFin.Name = "txtDiaFin";
-            this.txtDiaFin.Size = new System.Drawing.Size(56, 26);
+            this.txtDiaFin.Size = new System.Drawing.Size(39, 20);
             this.txtDiaFin.TabIndex = 30;
-            this.txtDiaFin.Visible = false;
             // 
             // txtAñoInicio
             // 
-            this.txtAñoInicio.Location = new System.Drawing.Point(145, 88);
-            this.txtAñoInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtAñoInicio.Location = new System.Drawing.Point(97, 57);
             this.txtAñoInicio.Name = "txtAñoInicio";
-            this.txtAñoInicio.Size = new System.Drawing.Size(56, 26);
+            this.txtAñoInicio.Size = new System.Drawing.Size(39, 20);
             this.txtAñoInicio.TabIndex = 29;
-            this.txtAñoInicio.Visible = false;
             // 
             // txtMesInicio
             // 
-            this.txtMesInicio.Location = new System.Drawing.Point(77, 88);
-            this.txtMesInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMesInicio.Location = new System.Drawing.Point(51, 57);
             this.txtMesInicio.Name = "txtMesInicio";
-            this.txtMesInicio.Size = new System.Drawing.Size(56, 26);
+            this.txtMesInicio.Size = new System.Drawing.Size(39, 20);
             this.txtMesInicio.TabIndex = 28;
-            this.txtMesInicio.Visible = false;
             // 
             // txtDiaInicio
             // 
-            this.txtDiaInicio.Location = new System.Drawing.Point(9, 88);
-            this.txtDiaInicio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDiaInicio.Location = new System.Drawing.Point(6, 57);
             this.txtDiaInicio.Name = "txtDiaInicio";
-            this.txtDiaInicio.Size = new System.Drawing.Size(56, 26);
+            this.txtDiaInicio.Size = new System.Drawing.Size(39, 20);
             this.txtDiaInicio.TabIndex = 27;
-            this.txtDiaInicio.Visible = false;
             // 
             // EventosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(816, 360);
             this.Controls.Add(this.txtAñoFin);
             this.Controls.Add(this.txtMesFin);
             this.Controls.Add(this.txtDiaFin);
@@ -185,6 +183,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.dgvEventos);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EventosForm";
             this.Text = "EventosForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).EndInit();

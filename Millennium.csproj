@@ -85,6 +85,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtagonistasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProtagonistasForm.Designer.cs">
+      <DependentUpon>ProtagonistasForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EventosForm.resx">
       <DependentUpon>EventosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +118,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ProtagonistasForm.resx">
+      <DependentUpon>ProtagonistasForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

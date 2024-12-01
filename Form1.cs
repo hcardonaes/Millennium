@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Millennium;
+using System;
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
@@ -102,5 +103,14 @@ namespace MillenniumApp
             eventosForm.ShowDialog();
 
         }
+
+        private void btnProtagonistas_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia de ProtagonistasForm
+            ProtagonistasForm protagonistasForm = new ProtagonistasForm();
+            protagonistasForm.ShowDialog();
+        }
+
+
     }
 }

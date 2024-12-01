@@ -33,6 +33,7 @@
             this.btnFamiliasForm = new System.Windows.Forms.Button();
             this.btnLugaresForm = new System.Windows.Forms.Button();
             this.btnEventos = new System.Windows.Forms.Button();
+            this.btnProtagonistas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,22 +42,20 @@
             this.dgvPersonajes.AllowUserToAddRows = false;
             this.dgvPersonajes.AllowUserToDeleteRows = false;
             this.dgvPersonajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonajes.Location = new System.Drawing.Point(20, 20);
-            this.dgvPersonajes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvPersonajes.Location = new System.Drawing.Point(13, 13);
             this.dgvPersonajes.Name = "dgvPersonajes";
             this.dgvPersonajes.ReadOnly = true;
             this.dgvPersonajes.RowHeadersWidth = 62;
-            this.dgvPersonajes.Size = new System.Drawing.Size(1170, 654);
+            this.dgvPersonajes.Size = new System.Drawing.Size(780, 425);
             this.dgvPersonajes.TabIndex = 0;
             this.dgvPersonajes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonajes_CellContentClick);
             this.dgvPersonajes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonajes_CellDoubleClick);
             // 
             // btnAgregarPersonaje
             // 
-            this.btnAgregarPersonaje.Location = new System.Drawing.Point(1257, 20);
-            this.btnAgregarPersonaje.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAgregarPersonaje.Location = new System.Drawing.Point(838, 13);
             this.btnAgregarPersonaje.Name = "btnAgregarPersonaje";
-            this.btnAgregarPersonaje.Size = new System.Drawing.Size(112, 35);
+            this.btnAgregarPersonaje.Size = new System.Drawing.Size(63, 23);
             this.btnAgregarPersonaje.TabIndex = 1;
             this.btnAgregarPersonaje.Text = "Agregar Personaje";
             this.btnAgregarPersonaje.UseVisualStyleBackColor = true;
@@ -64,10 +63,9 @@
             // 
             // btnFamiliasForm
             // 
-            this.btnFamiliasForm.Location = new System.Drawing.Point(1258, 112);
-            this.btnFamiliasForm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFamiliasForm.Location = new System.Drawing.Point(839, 68);
             this.btnFamiliasForm.Name = "btnFamiliasForm";
-            this.btnFamiliasForm.Size = new System.Drawing.Size(124, 49);
+            this.btnFamiliasForm.Size = new System.Drawing.Size(63, 32);
             this.btnFamiliasForm.TabIndex = 2;
             this.btnFamiliasForm.Text = "Familia";
             this.btnFamiliasForm.UseVisualStyleBackColor = true;
@@ -75,10 +73,9 @@
             // 
             // btnLugaresForm
             // 
-            this.btnLugaresForm.Location = new System.Drawing.Point(1257, 217);
-            this.btnLugaresForm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLugaresForm.Location = new System.Drawing.Point(838, 132);
             this.btnLugaresForm.Name = "btnLugaresForm";
-            this.btnLugaresForm.Size = new System.Drawing.Size(112, 35);
+            this.btnLugaresForm.Size = new System.Drawing.Size(63, 23);
             this.btnLugaresForm.TabIndex = 3;
             this.btnLugaresForm.Text = "Lugares";
             this.btnLugaresForm.UseVisualStyleBackColor = true;
@@ -86,25 +83,36 @@
             // 
             // btnEventos
             // 
-            this.btnEventos.Location = new System.Drawing.Point(1277, 290);
+            this.btnEventos.Location = new System.Drawing.Point(838, 187);
+            this.btnEventos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEventos.Name = "btnEventos";
-            this.btnEventos.Size = new System.Drawing.Size(75, 23);
+            this.btnEventos.Size = new System.Drawing.Size(63, 27);
             this.btnEventos.TabIndex = 4;
             this.btnEventos.Text = "Eventos";
             this.btnEventos.UseVisualStyleBackColor = true;
             this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
+            // btnProtagonistas
+            // 
+            this.btnProtagonistas.Location = new System.Drawing.Point(838, 240);
+            this.btnProtagonistas.Name = "btnProtagonistas";
+            this.btnProtagonistas.Size = new System.Drawing.Size(75, 23);
+            this.btnProtagonistas.TabIndex = 5;
+            this.btnProtagonistas.Text = "Protagonistas";
+            this.btnProtagonistas.UseVisualStyleBackColor = true;
+            this.btnProtagonistas.Click += new System.EventHandler(this.btnProtagonistas_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1425, 692);
+            this.ClientSize = new System.Drawing.Size(950, 450);
+            this.Controls.Add(this.btnProtagonistas);
             this.Controls.Add(this.btnEventos);
             this.Controls.Add(this.btnLugaresForm);
             this.Controls.Add(this.btnFamiliasForm);
             this.Controls.Add(this.btnAgregarPersonaje);
             this.Controls.Add(this.dgvPersonajes);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonajes)).EndInit();
@@ -119,6 +127,7 @@
         private System.Windows.Forms.Button btnFamiliasForm;
         private System.Windows.Forms.Button btnLugaresForm;
         private System.Windows.Forms.Button btnEventos;
+        private System.Windows.Forms.Button btnProtagonistas;
     }
 }
 

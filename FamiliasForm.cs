@@ -186,6 +186,7 @@ namespace MillenniumApp
                 }
             }
         }
+
         private string FormatearFecha(string dia, string mes, string anio)
         {
             if (int.TryParse(dia, out int d) && int.TryParse(mes, out int m) && int.TryParse(anio, out int y))
