@@ -82,5 +82,25 @@ namespace MillenniumApp
             LugaresForm lugaresForm = new LugaresForm();
             lugaresForm.ShowDialog();
         }
+
+        private void btnEventosForm_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia de EventosForm
+            EventosForm eventosForm = new EventosForm();
+            eventosForm.ShowDialog();
+        }
+
+        private void dgvPersonajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia de EventosForm
+            EventosForm eventosForm = new EventosForm();
+            eventosForm.ShowDialog();
+
+        }
     }
 }
