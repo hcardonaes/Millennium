@@ -34,6 +34,7 @@
             this.btnLugaresForm = new System.Windows.Forms.Button();
             this.btnEventos = new System.Windows.Forms.Button();
             this.btnProtagonistas = new System.Windows.Forms.Button();
+            this.btnRelacionesSP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             // btnEventos
             // 
             this.btnEventos.Location = new System.Drawing.Point(838, 187);
-            this.btnEventos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEventos.Margin = new System.Windows.Forms.Padding(2);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(63, 27);
             this.btnEventos.TabIndex = 4;
@@ -102,11 +103,22 @@
             this.btnProtagonistas.UseVisualStyleBackColor = true;
             this.btnProtagonistas.Click += new System.EventHandler(this.btnProtagonistas_Click);
             // 
+            // btnRelacionesSP
+            // 
+            this.btnRelacionesSP.Location = new System.Drawing.Point(838, 290);
+            this.btnRelacionesSP.Name = "btnRelacionesSP";
+            this.btnRelacionesSP.Size = new System.Drawing.Size(75, 23);
+            this.btnRelacionesSP.TabIndex = 6;
+            this.btnRelacionesSP.Text = "Rel. sociales";
+            this.btnRelacionesSP.UseVisualStyleBackColor = true;
+            this.btnRelacionesSP.Click += new System.EventHandler(this.btnRelacionesSP_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 450);
+            this.Controls.Add(this.btnRelacionesSP);
             this.Controls.Add(this.btnProtagonistas);
             this.Controls.Add(this.btnEventos);
             this.Controls.Add(this.btnLugaresForm);
@@ -128,6 +140,7 @@
         private System.Windows.Forms.Button btnLugaresForm;
         private System.Windows.Forms.Button btnEventos;
         private System.Windows.Forms.Button btnProtagonistas;
+        private System.Windows.Forms.Button btnRelacionesSP;
     }
 }
 

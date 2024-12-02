@@ -91,6 +91,12 @@
     <Compile Include="ProtagonistasForm.Designer.cs">
       <DependentUpon>ProtagonistasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RelacionesSociopoliticasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RelacionesSociopoliticasForm.Designer.cs">
+      <DependentUpon>RelacionesSociopoliticasForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EventosForm.resx">
       <DependentUpon>EventosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +126,9 @@
     </Compile>
     <EmbeddedResource Include="ProtagonistasForm.resx">
       <DependentUpon>ProtagonistasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RelacionesSociopoliticasForm.resx">
+      <DependentUpon>RelacionesSociopoliticasForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
