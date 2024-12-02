@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace MillenniumApp
 {
-    public partial class FamiliasForm : Form
+    public partial class SocialesForm : Form
     {
-        public FamiliasForm()
+        public SocialesForm()
         {
             InitializeComponent();
             CargarPersonajes();
-            CargarTipoParentesco();
+            CargarTipoRelacionSocial();
             CargarRelaciones();
         }
 
@@ -47,7 +47,7 @@ namespace MillenniumApp
             }
         }
 
-        private void CargarTipoParentesco()
+        private void CargarTipoRelacionSocial()
         {
             string connectionString = "Data Source=Millennium.db;Version=3;";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -57,20 +57,20 @@ namespace MillenniumApp
                     connection.Open();
 
                     // Consulta para obtener los tipos de parentesco
-                    string query = "SELECT id, nombre FROM tipoParentesco";
+                    string query = "SELECT id, nombre FROM tipos_relaciones_sociopoliticas";
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        cmbTipoParentesco.DataSource = dataTable;
-                        cmbTipoParentesco.DisplayMember = "nombre";
-                        cmbTipoParentesco.ValueMember = "id";
+                        cmbRelSocial.DataSource = dataTable;
+                        cmbRelSocial.DisplayMember = "nombre";
+                        cmbRelSocial.ValueMember = "id";
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar los tipos de parentesco: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al cargar los tipos de relaciones sociales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -89,17 +89,17 @@ namespace MillenniumApp
                                    "p2.nombre || ' ' || p2.apellido AS personaje2, " +
                                    "tp.nombre AS tipo_relacion, " +
                                    "lf.fecha_inicio, lf.fecha_fin " +
-                                   "FROM lazosFamiliares lf " +
+                                   "FROM relacionesSociopoliticas lf " +
                                    "JOIN personajes p1 ON lf.personaje_id1 = p1.id " +
                                    "JOIN personajes p2 ON lf.personaje_id2 = p2.id " +
-                                   "JOIN tipoParentesco tp ON lf.tipo_relacion_id = tp.id";
+                                   "JOIN tipos_relaciones_sociopoliticas tp ON lf.tipo_relacion_id = tp.id";
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        dgvRelaciones.DataSource = dataTable;
+                        dgvRelacionesSociales.DataSource = dataTable;
                     }
                 }
                 catch (Exception ex)
@@ -113,7 +113,7 @@ namespace MillenniumApp
         {
             int personaje1 = Convert.ToInt32(cmbPersonaje1.SelectedValue);
             int personaje2 = Convert.ToInt32(cmbPersonaje2.SelectedValue);
-            int tipoRelacion = Convert.ToInt32(cmbTipoParentesco.SelectedValue);
+            int tipoRelacion = Convert.ToInt32(cmbRelSocial.SelectedValue);
             string fechaInicio = FormatearFecha(txtDiaInicio.Text, txtMesInicio.Text, txtAñoInicio.Text);
             string fechaFin = FormatearFecha(txtDiaFin.Text, txtMesFin.Text, txtAñoFin.Text);
 
@@ -138,7 +138,7 @@ namespace MillenniumApp
 
                     // Obtener la relación recíproca
                     string reciproca = null;
-                    string queryReciproca = "SELECT reciproca FROM tipoParentesco WHERE id = @tipoRelacion";
+                    string queryReciproca = "SELECT reciproca FROM tipos_relaciones_sociopoliticas WHERE id = @tipoRelacion";
                     using (SQLiteCommand command = new SQLiteCommand(queryReciproca, connection))
                     {
                         command.Parameters.AddWithValue("@tipoRelacion", tipoRelacion);
@@ -152,7 +152,7 @@ namespace MillenniumApp
                     }
 
                     // Insertar la relación directa
-                    string queryDirecta = "INSERT INTO lazosFamiliares (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
+                    string queryDirecta = "INSERT INTO relacionesSociopoliticas (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
                                           "VALUES (@id1, @tipoRelacion, @id2, @fechaInicio, @fechaFin)";
                     using (SQLiteCommand command = new SQLiteCommand(queryDirecta, connection))
                     {
@@ -165,8 +165,8 @@ namespace MillenniumApp
                     }
 
                     // Insertar la relación recíproca
-                    string queryReciprocaInsert = "INSERT INTO lazosFamiliares (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
-                                                  "VALUES (@id2, (SELECT id FROM tipoParentesco WHERE nombre = @reciproca), @id1, @fechaInicio, @fechaFin)";
+                    string queryReciprocaInsert = "INSERT INTO relacionesSociopoliticas (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
+                                                  "VALUES (@id2, (SELECT id FROM tipos_relaciones_sociopoliticas WHERE nombre = @reciproca), @id1, @fechaInicio, @fechaFin)";
                     using (SQLiteCommand command = new SQLiteCommand(queryReciprocaInsert, connection))
                     {
                         command.Parameters.AddWithValue("@id1", personaje1);
@@ -202,23 +202,6 @@ namespace MillenniumApp
                 }
             }
             return null;
-        }
-
-        private void cmbTipoParentesco_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Obtener el nombre del parentesco seleccionado
-            string parentescoSeleccionado = cmbTipoParentesco.Text;
-
-            // Mostrar u ocultar los campos de fecha según el parentesco
-            bool mostrarFechas = parentescoSeleccionado.Equals("esposos", StringComparison.OrdinalIgnoreCase);
-
-            txtDiaInicio.Visible = mostrarFechas;
-            txtMesInicio.Visible = mostrarFechas;
-            txtAñoInicio.Visible = mostrarFechas;
-
-            txtDiaFin.Visible = mostrarFechas;
-            txtMesFin.Visible = mostrarFechas;
-            txtAñoFin.Visible = mostrarFechas;
         }
 
     }

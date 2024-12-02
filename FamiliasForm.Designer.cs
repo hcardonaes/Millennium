@@ -80,7 +80,7 @@
             // dgvRelaciones
             // 
             this.dgvRelaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRelaciones.Location = new System.Drawing.Point(154, 13);
+            this.dgvRelaciones.Location = new System.Drawing.Point(168, 13);
             this.dgvRelaciones.Name = "dgvRelaciones";
             this.dgvRelaciones.Size = new System.Drawing.Size(620, 425);
             this.dgvRelaciones.TabIndex = 4;

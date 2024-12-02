@@ -35,6 +35,8 @@
             this.btnEventos = new System.Windows.Forms.Button();
             this.btnProtagonistas = new System.Windows.Forms.Button();
             this.btnRelacionesSP = new System.Windows.Forms.Button();
+            this.btnCargos = new System.Windows.Forms.Button();
+            this.btnRoles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +115,33 @@
             this.btnRelacionesSP.UseVisualStyleBackColor = true;
             this.btnRelacionesSP.Click += new System.EventHandler(this.btnRelacionesSP_Click);
             // 
+            // btnCargos
+            // 
+            this.btnCargos.Location = new System.Drawing.Point(838, 339);
+            this.btnCargos.Name = "btnCargos";
+            this.btnCargos.Size = new System.Drawing.Size(75, 23);
+            this.btnCargos.TabIndex = 7;
+            this.btnCargos.Text = "Cargos";
+            this.btnCargos.UseVisualStyleBackColor = true;
+            this.btnCargos.Click += new System.EventHandler(this.btnCargos_Click);
+            // 
+            // btnRoles
+            // 
+            this.btnRoles.Location = new System.Drawing.Point(839, 380);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(75, 23);
+            this.btnRoles.TabIndex = 8;
+            this.btnRoles.Text = "Roles";
+            this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 450);
+            this.Controls.Add(this.btnRoles);
+            this.Controls.Add(this.btnCargos);
             this.Controls.Add(this.btnRelacionesSP);
             this.Controls.Add(this.btnProtagonistas);
             this.Controls.Add(this.btnEventos);
@@ -141,6 +165,8 @@
         private System.Windows.Forms.Button btnEventos;
         private System.Windows.Forms.Button btnProtagonistas;
         private System.Windows.Forms.Button btnRelacionesSP;
+        private System.Windows.Forms.Button btnCargos;
+        private System.Windows.Forms.Button btnRoles;
     }
 }
 

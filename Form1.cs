@@ -113,9 +113,20 @@ namespace MillenniumApp
 
         private void btnRelacionesSP_Click(object sender, EventArgs e)
         {
-            // Crear una instancia de RelacionesSPForm
-            RelacionesSociopoliticasForm relacionesSPForm = new RelacionesSociopoliticasForm();
-            relacionesSPForm.ShowDialog();
+            SocialesForm socialesForm = new SocialesForm();
+            socialesForm.ShowDialog();
+        }
+
+        private void btnCargos_Click(object sender, EventArgs e)
+        {
+            CargosPersonajesForm cargosPersonajesForm = new CargosPersonajesForm();
+            cargosPersonajesForm.ShowDialog();
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            RolesForm rolesForm = new RolesForm();
+            rolesForm.ShowDialog();
         }
     }
 }

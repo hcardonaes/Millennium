@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CargosPetsonajeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CargosPetsonajeForm.Designer.cs">
+      <DependentUpon>CargosPetsonajeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EventosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,21 @@
     <Compile Include="RelacionesSociopoliticasForm.Designer.cs">
       <DependentUpon>RelacionesSociopoliticasForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RolesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RolesForm.Designer.cs">
+      <DependentUpon>RolesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SocialesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SocialesForm.Designer.cs">
+      <DependentUpon>SocialesForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CargosPetsonajeForm.resx">
+      <DependentUpon>CargosPetsonajeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EventosForm.resx">
       <DependentUpon>EventosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +150,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RelacionesSociopoliticasForm.resx">
       <DependentUpon>RelacionesSociopoliticasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RolesForm.resx">
+      <DependentUpon>RolesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SocialesForm.resx">
+      <DependentUpon>SocialesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
