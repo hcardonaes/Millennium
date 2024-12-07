@@ -117,12 +117,6 @@ namespace MillenniumApp
             socialesForm.ShowDialog();
         }
 
-        private void btnCargo_Click(object sender, EventArgs e)
-        {
-            CargosPersonajesForm cargosPersonajesForm = new CargosPersonajesForm();
-            cargosPersonajesForm.ShowDialog();
-        }
-
         private void btnRoles_Click(object sender, EventArgs e)
         {
             RolesForm rolesForm = new RolesForm();
@@ -135,10 +129,11 @@ namespace MillenniumApp
             tiposCargoForm.ShowDialog();
         }
 
-        private void btnCargo_Click_1(object sender, EventArgs e)
+        private void btnCargo_Click(object sender, EventArgs e)
         {
-            CargosPersonajesForm cargosPersonajesForm = new CargosPersonajesForm();
+            CargosPersonajeForm cargosPersonajesForm = new CargosPersonajeForm();
             cargosPersonajesForm.ShowDialog();
+
         }
     }
 }

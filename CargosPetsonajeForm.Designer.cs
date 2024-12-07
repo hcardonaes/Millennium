@@ -1,6 +1,6 @@
 ﻿namespace MillenniumApp
 {
-    partial class CargosPersonajesForm
+    partial class CargosPersonajeForm
     {
         /// <summary>
         /// Required designer variable.

@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace MillenniumApp
 {
-    public partial class CargosPersonajesForm : Form
+    public partial class CargosPersonajeForm : Form
     {
-        public CargosPersonajesForm()
+        public CargosPersonajeForm()
         {
             InitializeComponent();
             CargarPersonajes();
