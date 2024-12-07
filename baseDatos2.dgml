@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" ZoomLevel="1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Database" Category="Database" Bounds="117.354788688231,-147.97644368806,730.505694890328,354.897674190817" Group="Expanded" Label="Millennium.db" UseManualLocation="True" />
+    <Node Id="cargos" Category="Table" Bounds="277.190426278257,36.4000263796835,75.0133333333333,25" Group="Collapsed" Label="cargos" UseManualLocation="True" />
+    <Node Id="cargos_fecha_fin" Category="Field Optional" Description="text" Label="fecha_fin" />
+    <Node Id="cargos_fecha_inicio" Category="Field Optional" Description="text" Label="fecha_inicio" />
+    <Node Id="cargos_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="cargos_institucion_id" Category="Field Foreign" Description="bigint" Label="institucion_id" />
+    <Node Id="cargos_personaje_id" Category="Field Foreign" Description="bigint" Label="personaje_id" />
+    <Node Id="cargos_tipo_cargo_id" Category="Field Foreign" Description="bigint" Label="tipo_cargo_id" />
+    <Node Id="eventos" Category="Table" Bounds="672.751722520984,156.64719002711,81.28,25" Group="Collapsed" Label="eventos" UseManualLocation="True" />
+    <Node Id="eventos_descripcion" Category="Field Optional" Description="text" Label="descripcion" />
+    <Node Id="eventos_fecha_fin" Category="Field Optional" Description="text" Label="fecha_fin" />
+    <Node Id="eventos_fecha_inicio" Category="Field Optional" Description="text" Label="fecha_inicio" />
+    <Node Id="eventos_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="eventos_lugar_id" Category="Field Foreign" Description="bigint" Label="lugar_id" />
+    <Node Id="eventos_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="instituciones" Category="Table" Bounds="302.625073399467,105.919002061173,106.26,25" Group="Collapsed" Label="instituciones" UseManualLocation="True" />
+    <Node Id="instituciones_descripcion" Category="Field Optional" Description="text" Label="descripcion" />
+    <Node Id="instituciones_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="instituciones_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="lazosFamiliares" Category="Table" Bounds="268.70512741546,-23.2933922536215,118.826666666667,25" Group="Collapsed" Label="lazosFamiliares" UseManualLocation="True" />
+    <Node Id="lazosFamiliares_fecha_fin" Category="Field Optional" Description="text" Label="fecha_fin" />
+    <Node Id="lazosFamiliares_fecha_inicio" Category="Field Optional" Description="text" Label="fecha_inicio" />
+    <Node Id="lazosFamiliares_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="lazosFamiliares_personaje_id1" Category="Field Foreign" Description="bigint" Label="personaje_id1" />
+    <Node Id="lazosFamiliares_personaje_id2" Category="Field Foreign" Description="bigint" Label="personaje_id2" />
+    <Node Id="lazosFamiliares_tipo_relacion_id" Category="Field Foreign" Description="bigint" Label="tipo_relacion_id" />
+    <Node Id="lugares" Category="Table" Bounds="577.885013304139,95.2547063656251,78.4133333333334,25" Group="Collapsed" Label="lugares" UseManualLocation="True" />
+    <Node Id="lugares_descripcion" Category="Field Optional" Description="text" Label="descripcion" />
+    <Node Id="lugares_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="lugares_latitud" Category="Field Optional" Description="real" Label="latitud" />
+    <Node Id="lugares_longitud" Category="Field Optional" Description="real" Label="longitud" />
+    <Node Id="lugares_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="personajes" Category="Table" Bounds="485.759505213295,40.2546063656252,96.8,25" Group="Collapsed" Label="personajes" UseManualLocation="True" />
+    <Node Id="personajes_apellido" Category="Field Optional" Description="text" Label="apellido" />
+    <Node Id="personajes_biografia" Category="Field Optional" Description="text" Label="biografia" />
+    <Node Id="personajes_fecha_muerte" Category="Field Optional" Description="text" Label="fecha_muerte" />
+    <Node Id="personajes_fecha_nacimiento" Category="Field Optional" Description="text" Label="fecha_nacimiento" />
+    <Node Id="personajes_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="personajes_importancia" Category="Field Optional" Description="bigint" Label="importancia" />
+    <Node Id="personajes_mote" Category="Field Optional" Description="text" Label="mote" />
+    <Node Id="personajes_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="protagonismos_de_eventos" Category="Table" Bounds="643.500483578558,-6.41087746459175,184.36,25" Group="Collapsed" Label="protagonismos_de_eventos" UseManualLocation="True" />
+    <Node Id="protagonismos_de_eventos_descripcion" Category="Field Optional" Bounds="618.577519126958,-41.0927186157244,80.3833333333333,25.96" Description="text" Label="descripcion" UseManualLocation="True" />
+    <Node Id="protagonismos_de_eventos_evento_id" Category="Field Foreign" Bounds="698.577519126959,-97.0528186157244,71.14,25.96" Description="bigint" Label="evento_id" UseManualLocation="True" />
+    <Node Id="protagonismos_de_eventos_id" Category="Field Primary" Bounds="618.577519126958,-97.0528186157244,50,25.96" Description="bigint" Label="id" UseManualLocation="True" />
+    <Node Id="protagonismos_de_eventos_personaje_id" Category="Field Foreign" Bounds="728.960852460292,-41.0927186157244,86.66,25.96" Description="bigint" Label="personaje_id" UseManualLocation="True" />
+    <Node Id="relacionesPersonales" Category="Table" Bounds="458.966850137855,-52.9762436880596,149.126666666667,25" Group="Collapsed" Label="relacionesPersonales" UseManualLocation="True" />
+    <Node Id="relacionesPersonales_fecha_fin" Category="Field Optional" Description="text" Label="fecha_fin" />
+    <Node Id="relacionesPersonales_fecha_inicio" Category="Field Optional" Description="text" Label="fecha_inicio" />
+    <Node Id="relacionesPersonales_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="relacionesPersonales_personaje_id1" Category="Field Foreign" Description="bigint" Label="personaje_id1" />
+    <Node Id="relacionesPersonales_personaje_id2" Category="Field Foreign" Description="bigint" Label="personaje_id2" />
+    <Node Id="relacionesPersonales_tipo_relacion_id" Category="Field Foreign" Description="bigint" Label="tipo_relacion_id" />
+    <Node Id="rolPersonajes" Category="Table" Bounds="480.020093979526,150.254806365625,110.133333333333,25" Group="Collapsed" Label="rolPersonajes" UseManualLocation="True" />
+    <Node Id="rolPersonajes_evento_id" Category="Field Foreign" Description="bigint" Label="evento_id" />
+    <Node Id="rolPersonajes_fecha_fin" Category="Field Optional" Description="text" Label="fecha_fin" />
+    <Node Id="rolPersonajes_fecha_inicio" Category="Field Optional" Description="text" Label="fecha_inicio" />
+    <Node Id="rolPersonajes_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="rolPersonajes_personaje_id" Category="Field Foreign" Description="bigint" Label="personaje_id" />
+    <Node Id="rolPersonajes_rol_id" Category="Field Foreign" Description="bigint" Label="rol_id" />
+    <Node Id="roles" Category="Table" Bounds="369.425571865278,161.921130502757,65.48,25" Group="Collapsed" Label="roles" UseManualLocation="True" />
+    <Node Id="roles_descripcion" Category="Field Optional" Description="text" Label="descripcion" />
+    <Node Id="roles_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="roles_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="tipoParentesco" Category="Table" Bounds="267.805818634087,-78.2934922536216,118.723333333333,25" Group="Collapsed" Label="tipoParentesco" UseManualLocation="True" />
+    <Node Id="tipoParentesco_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="tipoParentesco_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="tipoParentesco_reciproca" Category="Field" Description="text" Label="reciproca" />
+    <Node Id="tipos_de_cargos" Category="Table" Bounds="137.354788688231,91.4001263796835,124.466666666667,25" Group="Collapsed" Label="tipos_de_cargos" UseManualLocation="True" />
+    <Node Id="tipos_de_cargos_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="tipos_de_cargos_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="tipos_relaciones_personales" Category="Table" Bounds="434.310942690064,-107.97634368806,186.013333333333,25" Group="Collapsed" Label="tipos_relaciones_personales" UseManualLocation="True" />
+    <Node Id="tipos_relaciones_personales_id" Category="Field Primary" Description="bigint" Label="id" />
+    <Node Id="tipos_relaciones_personales_nombre" Category="Field" Description="text" Label="nombre" />
+    <Node Id="tipos_relaciones_personales_reciproca" Category="Field Optional" Description="text" Label="reciproca" />
+  </Nodes>
+  <Links>
+    <Link Source="Database" Target="cargos" Category="Contains" />
+    <Link Source="Database" Target="eventos" Category="Contains" />
+    <Link Source="Database" Target="instituciones" Category="Contains" />
+    <Link Source="Database" Target="lazosFamiliares" Category="Contains" />
+    <Link Source="Database" Target="lugares" Category="Contains" />
+    <Link Source="Database" Target="personajes" Category="Contains" />
+    <Link Source="Database" Target="protagonismos_de_eventos" Category="Contains" />
+    <Link Source="Database" Target="relacionesPersonales" Category="Contains" />
+    <Link Source="Database" Target="rolPersonajes" Category="Contains" />
+    <Link Source="Database" Target="roles" Category="Contains" />
+    <Link Source="Database" Target="tipoParentesco" Category="Contains" />
+    <Link Source="Database" Target="tipos_de_cargos" Category="Contains" />
+    <Link Source="Database" Target="tipos_relaciones_personales" Category="Contains" />
+    <Link Source="cargos" Target="cargos_fecha_fin" Category="Contains" />
+    <Link Source="cargos" Target="cargos_fecha_inicio" Category="Contains" />
+    <Link Source="cargos" Target="cargos_id" Category="Contains" />
+    <Link Source="cargos" Target="cargos_institucion_id" Category="Contains" />
+    <Link Source="cargos" Target="cargos_personaje_id" Category="Contains" />
+    <Link Source="cargos" Target="cargos_tipo_cargo_id" Category="Contains" />
+    <Link Source="cargos_institucion_id" Target="instituciones_id" Category="Foreign Key" Label="FK_cargos_2_0" />
+    <Link Source="cargos_personaje_id" Target="personajes_id" Category="Foreign Key" Label="FK_cargos_1_0" />
+    <Link Source="cargos_tipo_cargo_id" Target="tipos_de_cargos_id" Category="Foreign Key" Label="FK_cargos_0_0" />
+    <Link Source="eventos" Target="eventos_descripcion" Category="Contains" />
+    <Link Source="eventos" Target="eventos_fecha_fin" Category="Contains" />
+    <Link Source="eventos" Target="eventos_fecha_inicio" Category="Contains" />
+    <Link Source="eventos" Target="eventos_id" Category="Contains" />
+    <Link Source="eventos" Target="eventos_lugar_id" Category="Contains" />
+    <Link Source="eventos" Target="eventos_nombre" Category="Contains" />
+    <Link Source="eventos_lugar_id" Target="lugares_id" Category="Foreign Key" Label="FK_eventos_0_0" />
+    <Link Source="instituciones" Target="instituciones_descripcion" Category="Contains" />
+    <Link Source="instituciones" Target="instituciones_id" Category="Contains" />
+    <Link Source="instituciones" Target="instituciones_nombre" Category="Contains" />
+    <Link Source="lazosFamiliares" Target="lazosFamiliares_fecha_fin" Category="Contains" />
+    <Link Source="lazosFamiliares" Target="lazosFamiliares_fecha_inicio" Category="Contains" />
+    <Link Source="lazosFamiliares" Target="lazosFamiliares_id" Category="Contains" />
+    <Link Source="lazosFamiliares" Target="lazosFamiliares_personaje_id1" Category="Contains" />
+    <Link Source="lazosFamiliares" Target="lazosFamiliares_personaje_id2" Category="Contains" />
+    <Link Source="lazosFamiliares" Target="lazosFamiliares_tipo_relacion_id" Category="Contains" />
+    <Link Source="lazosFamiliares_personaje_id1" Target="personajes_id" Category="Foreign Key" Label="FK_lazosFamiliares_2_0" />
+    <Link Source="lazosFamiliares_personaje_id2" Target="personajes_id" Category="Foreign Key" Label="FK_lazosFamiliares_1_0" />
+    <Link Source="lazosFamiliares_tipo_relacion_id" Target="tipoParentesco_id" Category="Foreign Key" Label="FK_lazosFamiliares_0_0" />
+    <Link Source="lugares" Target="lugares_descripcion" Category="Contains" />
+    <Link Source="lugares" Target="lugares_id" Category="Contains" />
+    <Link Source="lugares" Target="lugares_latitud" Category="Contains" />
+    <Link Source="lugares" Target="lugares_longitud" Category="Contains" />
+    <Link Source="lugares" Target="lugares_nombre" Category="Contains" />
+    <Link Source="personajes" Target="personajes_apellido" Category="Contains" />
+    <Link Source="personajes" Target="personajes_biografia" Category="Contains" />
+    <Link Source="personajes" Target="personajes_fecha_muerte" Category="Contains" />
+    <Link Source="personajes" Target="personajes_fecha_nacimiento" Category="Contains" />
+    <Link Source="personajes" Target="personajes_id" Category="Contains" />
+    <Link Source="personajes" Target="personajes_importancia" Category="Contains" />
+    <Link Source="personajes" Target="personajes_mote" Category="Contains" />
+    <Link Source="personajes" Target="personajes_nombre" Category="Contains" />
+    <Link Source="protagonismos_de_eventos" Target="protagonismos_de_eventos_descripcion" Category="Contains" />
+    <Link Source="protagonismos_de_eventos" Target="protagonismos_de_eventos_evento_id" Category="Contains" />
+    <Link Source="protagonismos_de_eventos" Target="protagonismos_de_eventos_id" Category="Contains" />
+    <Link Source="protagonismos_de_eventos" Target="protagonismos_de_eventos_personaje_id" Category="Contains" />
+    <Link Source="protagonismos_de_eventos_evento_id" Target="eventos_id" Category="Foreign Key" Label="FK_protagonismos_de_eventos_1_0" />
+    <Link Source="protagonismos_de_eventos_personaje_id" Target="personajes_id" Category="Foreign Key" Label="FK_protagonismos_de_eventos_0_0" />
+    <Link Source="relacionesPersonales" Target="relacionesPersonales_fecha_fin" Category="Contains" />
+    <Link Source="relacionesPersonales" Target="relacionesPersonales_fecha_inicio" Category="Contains" />
+    <Link Source="relacionesPersonales" Target="relacionesPersonales_id" Category="Contains" />
+    <Link Source="relacionesPersonales" Target="relacionesPersonales_personaje_id1" Category="Contains" />
+    <Link Source="relacionesPersonales" Target="relacionesPersonales_personaje_id2" Category="Contains" />
+    <Link Source="relacionesPersonales" Target="relacionesPersonales_tipo_relacion_id" Category="Contains" />
+    <Link Source="relacionesPersonales_personaje_id1" Target="personajes_id" Category="Foreign Key" Label="FK_relacionesPersonales_2_0" />
+    <Link Source="relacionesPersonales_personaje_id2" Target="personajes_id" Category="Foreign Key" Label="FK_relacionesPersonales_1_0" />
+    <Link Source="relacionesPersonales_tipo_relacion_id" Target="tipos_relaciones_personales_id" Category="Foreign Key" Label="FK_relacionesPersonales_0_0" />
+    <Link Source="rolPersonajes" Target="rolPersonajes_evento_id" Category="Contains" />
+    <Link Source="rolPersonajes" Target="rolPersonajes_fecha_fin" Category="Contains" />
+    <Link Source="rolPersonajes" Target="rolPersonajes_fecha_inicio" Category="Contains" />
+    <Link Source="rolPersonajes" Target="rolPersonajes_id" Category="Contains" />
+    <Link Source="rolPersonajes" Target="rolPersonajes_personaje_id" Category="Contains" />
+    <Link Source="rolPersonajes" Target="rolPersonajes_rol_id" Category="Contains" />
+    <Link Source="rolPersonajes_evento_id" Target="eventos_id" Category="Foreign Key" Label="FK_rolPersonajes_0_0" />
+    <Link Source="rolPersonajes_personaje_id" Target="personajes_id" Category="Foreign Key" Label="FK_rolPersonajes_2_0" />
+    <Link Source="rolPersonajes_rol_id" Target="roles_id" Category="Foreign Key" Label="FK_rolPersonajes_1_0" />
+    <Link Source="roles" Target="roles_descripcion" Category="Contains" />
+    <Link Source="roles" Target="roles_id" Category="Contains" />
+    <Link Source="roles" Target="roles_nombre" Category="Contains" />
+    <Link Source="tipoParentesco" Target="tipoParentesco_id" Category="Contains" />
+    <Link Source="tipoParentesco" Target="tipoParentesco_nombre" Category="Contains" />
+    <Link Source="tipoParentesco" Target="tipoParentesco_reciproca" Category="Contains" />
+    <Link Source="tipos_de_cargos" Target="tipos_de_cargos_id" Category="Contains" />
+    <Link Source="tipos_de_cargos" Target="tipos_de_cargos_nombre" Category="Contains" />
+    <Link Source="tipos_relaciones_personales" Target="tipos_relaciones_personales_id" Category="Contains" />
+    <Link Source="tipos_relaciones_personales" Target="tipos_relaciones_personales_nombre" Category="Contains" />
+    <Link Source="tipos_relaciones_personales" Target="tipos_relaciones_personales_reciproca" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contiene" Description="Indica si el origen del vínculo contiene el objeto de destino." CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contenido por" IsContainment="True" OutgoingActionLabel="Contiene" />
+    <Category Id="Database" />
+    <Category Id="Field" />
+    <Category Id="Field Foreign" />
+    <Category Id="Field Optional" />
+    <Category Id="Field Primary" />
+    <Category Id="Foreign Key" />
+    <Category Id="Table" />
+  </Categories>
+  <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Description" Label="Descripción" Description="Descripción" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Grupo" Description="Muestra el nodo como grupo" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="Label" Label="Etiqueta" Description="Etiqueta Displayable de un objeto Annotatable." DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+    <Property Id="ZoomLevel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Table" ValueLabel="True">
+      <Condition Expression="HasCategory('Table')" />
+      <Setter Property="Background" Value="#FFC0C0C0" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Schema" ValueLabel="True">
+      <Condition Expression="HasCategory('Schema')" />
+      <Setter Property="Background" Value="#FF7F9169" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Primary" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Primary')" />
+      <Setter Property="Background" Value="#FF008000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Optional" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Optional')" />
+      <Setter Property="Background" Value="#FF808040" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field Foreign" ValueLabel="True">
+      <Condition Expression="HasCategory('Field Foreign')" />
+      <Setter Property="Background" Value="#FF8080FF" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Field" ValueLabel="True">
+      <Condition Expression="HasCategory('Field')" />
+      <Setter Property="Background" Value="#FFC0A000" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="Database" ValueLabel="True">
+      <Condition Expression="HasCategory('Database')" />
+      <Setter Property="Background" Value="#FFFFFFFF" />
+    </Style>
+  </Styles>
+</DirectedGraph>

@@ -188,5 +188,14 @@ namespace MillenniumApp
             return null;
         }
 
+        private void cmbInstitucion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CargosPersonajesForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

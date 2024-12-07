@@ -57,7 +57,7 @@ namespace MillenniumApp
                     connection.Open();
 
                     // Consulta para obtener los tipos de parentesco
-                    string query = "SELECT id, nombre FROM tipos_relaciones_sociopoliticas";
+                    string query = "SELECT id, nombre FROM tipos_relaciones_personales";
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
                         DataTable dataTable = new DataTable();
@@ -86,13 +86,13 @@ namespace MillenniumApp
 
                     // Consulta para obtener las relaciones
                     string query = "SELECT p1.nombre || ' ' || p1.apellido AS personaje1, " +
-                                   "p2.nombre || ' ' || p2.apellido AS personaje2, " +
                                    "tp.nombre AS tipo_relacion, " +
+                                   "p2.nombre || ' ' || p2.apellido AS personaje2, " +
                                    "lf.fecha_inicio, lf.fecha_fin " +
-                                   "FROM relacionesSociopoliticas lf " +
+                                   "FROM relacionesPersonales lf " +
                                    "JOIN personajes p1 ON lf.personaje_id1 = p1.id " +
                                    "JOIN personajes p2 ON lf.personaje_id2 = p2.id " +
-                                   "JOIN tipos_relaciones_sociopoliticas tp ON lf.tipo_relacion_id = tp.id";
+                                   "JOIN tipos_relaciones_personales tp ON lf.tipo_relacion_id = tp.id";
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
@@ -138,7 +138,7 @@ namespace MillenniumApp
 
                     // Obtener la relación recíproca
                     string reciproca = null;
-                    string queryReciproca = "SELECT reciproca FROM tipos_relaciones_sociopoliticas WHERE id = @tipoRelacion";
+                    string queryReciproca = "SELECT reciproca FROM tipos_relaciones_personales WHERE id = @tipoRelacion";
                     using (SQLiteCommand command = new SQLiteCommand(queryReciproca, connection))
                     {
                         command.Parameters.AddWithValue("@tipoRelacion", tipoRelacion);
@@ -152,7 +152,7 @@ namespace MillenniumApp
                     }
 
                     // Insertar la relación directa
-                    string queryDirecta = "INSERT INTO relacionesSociopoliticas (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
+                    string queryDirecta = "INSERT INTO relacionesPersonales (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
                                           "VALUES (@id1, @tipoRelacion, @id2, @fechaInicio, @fechaFin)";
                     using (SQLiteCommand command = new SQLiteCommand(queryDirecta, connection))
                     {
@@ -165,8 +165,8 @@ namespace MillenniumApp
                     }
 
                     // Insertar la relación recíproca
-                    string queryReciprocaInsert = "INSERT INTO relacionesSociopoliticas (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
-                                                  "VALUES (@id2, (SELECT id FROM tipos_relaciones_sociopoliticas WHERE nombre = @reciproca), @id1, @fechaInicio, @fechaFin)";
+                    string queryReciprocaInsert = "INSERT INTO relacionesPersonales (personaje_id1, tipo_relacion_id, personaje_id2, fecha_inicio, fecha_fin) " +
+                                                  "VALUES (@id2, (SELECT id FROM tipos_relaciones_personales WHERE nombre = @reciproca), @id1, @fechaInicio, @fechaFin)";
                     using (SQLiteCommand command = new SQLiteCommand(queryReciprocaInsert, connection))
                     {
                         command.Parameters.AddWithValue("@id1", personaje1);

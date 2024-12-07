@@ -47,7 +47,7 @@
             // dgvLugares
             // 
             this.dgvLugares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLugares.Location = new System.Drawing.Point(204, 12);
+            this.dgvLugares.Location = new System.Drawing.Point(197, 4);
             this.dgvLugares.Name = "dgvLugares";
             this.dgvLugares.Size = new System.Drawing.Size(591, 434);
             this.dgvLugares.TabIndex = 0;

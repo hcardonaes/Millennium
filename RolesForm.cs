@@ -123,7 +123,7 @@ namespace Millennium
                 try
                 {
                     connection.Open();
-                    string query = "INSERT INTO rolPersonaje (personaje_id, rol_id, evento_id, fecha_inicio, fecha_fin) " +
+                    string query = "INSERT INTO rolPersonajes (personaje_id, rol_id, evento_id, fecha_inicio, fecha_fin) " +
                                    "VALUES (@personajeId, @rolId, @eventoId, @fechaInicio, @fechaFin)";
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
@@ -161,7 +161,7 @@ namespace Millennium
                                    "       r.nombre AS rol, " +
                                    "       e.nombre AS evento, " +
                                    "       rp.fecha_inicio, rp.fecha_fin " +
-                                   "FROM rolPersonaje rp " +
+                                   "FROM rolPersonajes rp " +
                                    "JOIN personajes p ON rp.personaje_id = p.id " +
                                    "JOIN roles r ON rp.rol_id = r.id " +
                                    "JOIN eventos e ON rp.evento_id = e.id";

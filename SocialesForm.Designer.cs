@@ -39,6 +39,11 @@
             this.cmbRelSocial = new System.Windows.Forms.ComboBox();
             this.cmbPersonaje2 = new System.Windows.Forms.ComboBox();
             this.cmbPersonaje1 = new System.Windows.Forms.ComboBox();
+            this.labelPersonaje1 = new System.Windows.Forms.Label();
+            this.labelRelacion = new System.Windows.Forms.Label();
+            this.labelPersonaje = new System.Windows.Forms.Label();
+            this.labelInicio = new System.Windows.Forms.Label();
+            this.labelFin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRelacionesSociales)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +53,6 @@
             this.txtAñoFin.Name = "txtAñoFin";
             this.txtAñoFin.Size = new System.Drawing.Size(39, 20);
             this.txtAñoFin.TabIndex = 37;
-            this.txtAñoFin.Visible = false;
             // 
             // txtMesFin
             // 
@@ -56,7 +60,6 @@
             this.txtMesFin.Name = "txtMesFin";
             this.txtMesFin.Size = new System.Drawing.Size(39, 20);
             this.txtMesFin.TabIndex = 36;
-            this.txtMesFin.Visible = false;
             // 
             // txtDiaFin
             // 
@@ -64,7 +67,6 @@
             this.txtDiaFin.Name = "txtDiaFin";
             this.txtDiaFin.Size = new System.Drawing.Size(39, 20);
             this.txtDiaFin.TabIndex = 35;
-            this.txtDiaFin.Visible = false;
             // 
             // txtAñoInicio
             // 
@@ -72,7 +74,6 @@
             this.txtAñoInicio.Name = "txtAñoInicio";
             this.txtAñoInicio.Size = new System.Drawing.Size(39, 20);
             this.txtAñoInicio.TabIndex = 34;
-            this.txtAñoInicio.Visible = false;
             // 
             // txtMesInicio
             // 
@@ -80,7 +81,6 @@
             this.txtMesInicio.Name = "txtMesInicio";
             this.txtMesInicio.Size = new System.Drawing.Size(39, 20);
             this.txtMesInicio.TabIndex = 33;
-            this.txtMesInicio.Visible = false;
             // 
             // txtDiaInicio
             // 
@@ -88,19 +88,18 @@
             this.txtDiaInicio.Name = "txtDiaInicio";
             this.txtDiaInicio.Size = new System.Drawing.Size(39, 20);
             this.txtDiaInicio.TabIndex = 32;
-            this.txtDiaInicio.Visible = false;
             // 
             // dgvRelacionesSociales
             // 
             this.dgvRelacionesSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRelacionesSociales.Location = new System.Drawing.Point(166, 13);
+            this.dgvRelacionesSociales.Location = new System.Drawing.Point(276, 13);
             this.dgvRelacionesSociales.Name = "dgvRelacionesSociales";
-            this.dgvRelacionesSociales.Size = new System.Drawing.Size(620, 425);
+            this.dgvRelacionesSociales.Size = new System.Drawing.Size(510, 425);
             this.dgvRelacionesSociales.TabIndex = 31;
             // 
             // btnAgregarRelacion
             // 
-            this.btnAgregarRelacion.Location = new System.Drawing.Point(24, 139);
+            this.btnAgregarRelacion.Location = new System.Drawing.Point(45, 131);
             this.btnAgregarRelacion.Name = "btnAgregarRelacion";
             this.btnAgregarRelacion.Size = new System.Drawing.Size(75, 23);
             this.btnAgregarRelacion.TabIndex = 30;
@@ -111,7 +110,7 @@
             // cmbRelSocial
             // 
             this.cmbRelSocial.FormattingEnabled = true;
-            this.cmbRelSocial.Location = new System.Drawing.Point(24, 106);
+            this.cmbRelSocial.Location = new System.Drawing.Point(23, 67);
             this.cmbRelSocial.Name = "cmbRelSocial";
             this.cmbRelSocial.Size = new System.Drawing.Size(121, 21);
             this.cmbRelSocial.TabIndex = 29;
@@ -119,7 +118,7 @@
             // cmbPersonaje2
             // 
             this.cmbPersonaje2.FormattingEnabled = true;
-            this.cmbPersonaje2.Location = new System.Drawing.Point(24, 73);
+            this.cmbPersonaje2.Location = new System.Drawing.Point(24, 94);
             this.cmbPersonaje2.Name = "cmbPersonaje2";
             this.cmbPersonaje2.Size = new System.Drawing.Size(121, 21);
             this.cmbPersonaje2.TabIndex = 28;
@@ -132,11 +131,61 @@
             this.cmbPersonaje1.Size = new System.Drawing.Size(121, 21);
             this.cmbPersonaje1.TabIndex = 27;
             // 
+            // labelPersonaje1
+            // 
+            this.labelPersonaje1.AutoSize = true;
+            this.labelPersonaje1.Location = new System.Drawing.Point(184, 47);
+            this.labelPersonaje1.Name = "labelPersonaje1";
+            this.labelPersonaje1.Size = new System.Drawing.Size(54, 13);
+            this.labelPersonaje1.TabIndex = 38;
+            this.labelPersonaje1.Text = "Personaje";
+            // 
+            // labelRelacion
+            // 
+            this.labelRelacion.AutoSize = true;
+            this.labelRelacion.Location = new System.Drawing.Point(184, 72);
+            this.labelRelacion.Name = "labelRelacion";
+            this.labelRelacion.Size = new System.Drawing.Size(49, 13);
+            this.labelRelacion.TabIndex = 39;
+            this.labelRelacion.Text = "Relacion";
+            // 
+            // labelPersonaje
+            // 
+            this.labelPersonaje.AutoSize = true;
+            this.labelPersonaje.Location = new System.Drawing.Point(184, 97);
+            this.labelPersonaje.Name = "labelPersonaje";
+            this.labelPersonaje.Size = new System.Drawing.Size(54, 13);
+            this.labelPersonaje.TabIndex = 40;
+            this.labelPersonaje.Text = "Personaje";
+            // 
+            // labelInicio
+            // 
+            this.labelInicio.AutoSize = true;
+            this.labelInicio.Location = new System.Drawing.Point(184, 211);
+            this.labelInicio.Name = "labelInicio";
+            this.labelInicio.Size = new System.Drawing.Size(32, 13);
+            this.labelInicio.TabIndex = 41;
+            this.labelInicio.Text = "Inicio";
+            // 
+            // labelFin
+            // 
+            this.labelFin.AutoSize = true;
+            this.labelFin.Location = new System.Drawing.Point(184, 237);
+            this.labelFin.Name = "labelFin";
+            this.labelFin.Size = new System.Drawing.Size(21, 13);
+            this.labelFin.TabIndex = 42;
+            this.labelFin.Text = "Fin";
+            // 
             // SocialesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelFin);
+            this.Controls.Add(this.labelInicio);
+            this.Controls.Add(this.labelPersonaje);
+            this.Controls.Add(this.labelRelacion);
+            this.Controls.Add(this.labelPersonaje1);
             this.Controls.Add(this.txtAñoFin);
             this.Controls.Add(this.txtMesFin);
             this.Controls.Add(this.txtDiaFin);
@@ -169,5 +218,10 @@
         private System.Windows.Forms.ComboBox cmbRelSocial;
         private System.Windows.Forms.ComboBox cmbPersonaje2;
         private System.Windows.Forms.ComboBox cmbPersonaje1;
+        private System.Windows.Forms.Label labelPersonaje1;
+        private System.Windows.Forms.Label labelRelacion;
+        private System.Windows.Forms.Label labelPersonaje;
+        private System.Windows.Forms.Label labelInicio;
+        private System.Windows.Forms.Label labelFin;
     }
 }

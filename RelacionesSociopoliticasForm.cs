@@ -60,7 +60,7 @@ namespace Millennium
                     connection.Open();
 
                     // Consulta para obtener los tipos de relación
-                    string query = "SELECT id, nombre FROM tipos_relaciones_sociopoliticas";
+                    string query = "SELECT id, nombre FROM tipos_relaciones_personales";
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
                         DataTable dataTable = new DataTable();
@@ -93,10 +93,10 @@ namespace Millennium
                                    "       p2.nombre || ' ' || p2.apellido AS personaje2, " +
                                    "       tr.nombre AS tipo_relacion, " +
                                    "       rs.fecha_inicio, rs.fecha_fin " +
-                                   "FROM relacionesSociopoliticas rs " +
+                                   "FROM relacionesPersonales rs " +
                                    "JOIN personajes p1 ON rs.personaje_id1 = p1.id " +
                                    "JOIN personajes p2 ON rs.personaje_id2 = p2.id " +
-                                   "JOIN tipos_relaciones_sociopoliticas tr ON rs.tipo_relacion_id = tr.id";
+                                   "JOIN tipos_relaciones_personales tr ON rs.tipo_relacion_id = tr.id";
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
@@ -188,7 +188,7 @@ namespace Millennium
                     connection.Open();
 
                     // Insertar relación directa
-                    string queryDirecta = "INSERT INTO relacionesSociopoliticas (personaje_id1, personaje_id2, tipo_relacion_id, fecha_inicio, fecha_fin) " +
+                    string queryDirecta = "INSERT INTO relacionesPersonales (personaje_id1, personaje_id2, tipo_relacion_id, fecha_inicio, fecha_fin) " +
                                           "VALUES (@id1, @id2, @tipoRelacion, @fechaInicio, @fechaFin)";
                     using (SQLiteCommand command = new SQLiteCommand(queryDirecta, connection))
                     {
@@ -209,7 +209,7 @@ namespace Millennium
 
                         if (!string.IsNullOrEmpty(tipoReciproca))
                         {
-                            string queryInsertReciproca = "INSERT INTO relacionesSociopoliticas (personaje_id1, personaje_id2, tipo_relacion_id, fecha_inicio, fecha_fin) " +
+                            string queryInsertReciproca = "INSERT INTO relacionesPersonales (personaje_id1, personaje_id2, tipo_relacion_id, fecha_inicio, fecha_fin) " +
                                                           "VALUES (@id2, @id1, (SELECT id FROM tipos_relaciones_sociopoliticas WHERE nombre = @tipoReciproca), @fechaInicio, @fechaFin)";
                             using (SQLiteCommand commandInsertReciproca = new SQLiteCommand(queryInsertReciproca, connection))
                             {

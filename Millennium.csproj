@@ -109,11 +109,23 @@
     <Compile Include="RolesForm.Designer.cs">
       <DependentUpon>RolesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Settings1.cs" />
+    <Compile Include="Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings1.settings</DependentUpon>
+    </Compile>
     <Compile Include="SocialesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SocialesForm.Designer.cs">
       <DependentUpon>SocialesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TiposCargoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TiposCargoForm.Designer.cs">
+      <DependentUpon>TiposCargoForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CargosPetsonajeForm.resx">
       <DependentUpon>CargosPetsonajeForm.cs</DependentUpon>
@@ -157,6 +169,12 @@
     <EmbeddedResource Include="SocialesForm.resx">
       <DependentUpon>SocialesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TiposCargoForm.resx">
+      <DependentUpon>TiposCargoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="baseDatos.dgml" />
+    <None Include="baseDatos2.dgml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -166,9 +184,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <None Include="Settings1.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.Sqlite">

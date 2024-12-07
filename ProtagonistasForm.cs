@@ -12,7 +12,8 @@ namespace Millennium
             InitializeComponent();
             CargarPersonajes();
             CargarEventos();
-            CargarProtagonistas(); 
+            CargarProtagonistas();
+            CargarRoles();
 
         }
 
@@ -25,14 +26,16 @@ namespace Millennium
                 {
                     connection.Open();
 
-                    // Consulta para obtener eventos, personajes, y descripciones
+                    // Consulta para obtener eventos, personajes, roles y descripciones
                     string query = "SELECT ep.id, " +
-                                   "       e.nombre AS evento, " +
                                    "       p.nombre || ' ' || p.apellido AS protagonista, " +
+                                   "       r.nombre AS rol, " +
+                                   "       e.nombre AS evento, " +
                                    "       ep.descripcion " +
-                                   "FROM eventos_protagonistas ep " +
+                                   "FROM protagonismos_de_eventos ep " +
                                    "JOIN eventos e ON ep.evento_id = e.id " +
-                                   "JOIN personajes p ON ep.personaje_id = p.id";
+                                   "JOIN personajes p ON ep.personaje_id = p.id " +
+                                   "JOIN roles r ON ep.rol_id = r.id";
 
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
@@ -65,6 +68,20 @@ namespace Millennium
                 return;
             }
 
+            if (cmbRol.SelectedValue == null)
+            {
+                MessageBox.Show("Por favor, selecciona un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar rol de protagonista desde el ComboBox
+            //if (cmbRol.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Por favor, selecciona un rol válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+
             // Obtener el ID del evento seleccionado desde el DataGridView
             int eventoId = Convert.ToInt32(dgvEventos.SelectedRows[0].Cells["id"].Value);
 
@@ -83,12 +100,13 @@ namespace Millennium
                     connection.Open();
 
                     // Insertar el protagonista en la tabla intermedia
-                    string query = "INSERT INTO eventos_protagonistas (evento_id, personaje_id, descripcion) " +
-                                   "VALUES (@eventoId, @personajeId, @descripcion)";
+                    string query = "INSERT INTO protagonismos_de_eventos (evento_id, rol_id, personaje_id, descripcion) " +
+                                   "VALUES (@eventoId, @rolId, @personajeId, @descripcion)";
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@eventoId", eventoId);
                         command.Parameters.AddWithValue("@personajeId", personajeId);
+                        command.Parameters.AddWithValue("@rolId", cmbRol.SelectedValue); // ID del rol de protagonista
+                        command.Parameters.AddWithValue("@eventoId", eventoId);
                         command.Parameters.AddWithValue("@descripcion", descripcion ?? (object)DBNull.Value);
 
                         command.ExecuteNonQuery();
@@ -130,6 +148,34 @@ namespace Millennium
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error al cargar los personajes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void CargarRoles()
+        {
+            string connectionString = "Data Source=Millennium.db;Version=3;";
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Consulta para obtener los roles
+                    string query = "SELECT id, nombre FROM roles";
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        cmbRol.DataSource = dataTable;
+                        cmbRol.DisplayMember = "nombre"; // Columna que se muestra en el ComboBox
+                        cmbRol.ValueMember = "id"; // Valor asociado al elemento
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar los roles: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -196,9 +242,5 @@ namespace Millennium
             }
         }
 
-        private void lblPersonajes_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
+}
 }
