@@ -14,6 +14,8 @@ namespace MillenniumApp
             CargarDatosPersonajes();
         }
 
+
+
         private void CargarDatosPersonajes()
         {
             string connectionString = "Data Source=Millennium.db;Version=3;";
@@ -52,7 +54,7 @@ namespace MillenniumApp
 
                 // Abrir el formulario de edición
                 FormEditarPersonaje formEditar = new FormEditarPersonaje(id);
-                formEditar.ShowDialog();
+                formEditar.Show();
 
                 // Recargar los datos después de editar un personaje
                 CargarDatosPersonajes();
@@ -63,7 +65,7 @@ namespace MillenniumApp
         {
             // Abrir el formulario de agregar personaje
             FormAgregarPersonaje formAgregar = new FormAgregarPersonaje();
-            formAgregar.ShowDialog();
+            formAgregar.Show();
 
             // Recargar los datos después de agregar un personaje
             CargarDatosPersonajes();
@@ -73,22 +75,21 @@ namespace MillenniumApp
         {
             // Crear una instancia de FamiliasForm
             FamiliasForm familiasForm = new FamiliasForm();
-            familiasForm.ShowDialog();
+            familiasForm.Show();
         }
-
 
         private void btnLugaresForm_Click(object sender, EventArgs e)
         {
             // Crear una instancia de LugaresForm
             LugaresForm lugaresForm = new LugaresForm();
-            lugaresForm.ShowDialog();
+            lugaresForm.Show();
         }
 
         private void btnEventosForm_Click(object sender, EventArgs e)
         {
             // Crear una instancia de EventosForm
             EventosForm eventosForm = new EventosForm();
-            eventosForm.ShowDialog();
+            eventosForm.Show();
         }
 
         private void dgvPersonajes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -100,7 +101,7 @@ namespace MillenniumApp
         {
             // Crear una instancia de EventosForm
             EventosForm eventosForm = new EventosForm();
-            eventosForm.ShowDialog();
+            eventosForm.Show();
 
         }
 
@@ -108,32 +109,42 @@ namespace MillenniumApp
         {
             // Crear una instancia de ProtagonistasForm
             ProtagonistasForm protagonistasForm = new ProtagonistasForm();
-            protagonistasForm.ShowDialog();
+            protagonistasForm.Show();
         }
 
         private void btnRelacionesSP_Click(object sender, EventArgs e)
         {
             SocialesForm socialesForm = new SocialesForm();
-            socialesForm.ShowDialog();
-        }
-
-        private void btnRoles_Click(object sender, EventArgs e)
-        {
-            RolesForm rolesForm = new RolesForm();
-            rolesForm.ShowDialog();
+            socialesForm.Show();
         }
 
         private void buttonTipoCargo_Click(object sender, EventArgs e)
         {
             TiposCargoForm tiposCargoForm = new TiposCargoForm();
-            tiposCargoForm.ShowDialog();
+            tiposCargoForm.Show();
         }
 
         private void btnCargo_Click(object sender, EventArgs e)
         {
             CargosPersonajeForm cargosPersonajesForm = new CargosPersonajeForm();
-            cargosPersonajesForm.ShowDialog();
+            cargosPersonajesForm.Show();
 
+        }
+
+        // ...
+
+
+
+        private void btnRol_Click(object sender, EventArgs e)
+        {
+            RolesForm rolesForm = new RolesForm();
+            rolesForm.Show();
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            TiposDeRol tiposDeRol = new TiposDeRol();
+            tiposDeRol.Show();
         }
     }
 }

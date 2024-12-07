@@ -36,9 +36,11 @@
             this.btnProtagonistas = new System.Windows.Forms.Button();
             this.btnRelacionesSP = new System.Windows.Forms.Button();
             this.btnCargo = new System.Windows.Forms.Button();
-            this.btnRoles = new System.Windows.Forms.Button();
+            this.btnRol = new System.Windows.Forms.Button();
             this.buttonTipoCargo = new System.Windows.Forms.Button();
             this.labelActualizar = new System.Windows.Forms.Label();
+            this.btnRoles = new System.Windows.Forms.Button();
+            this.btnTiposRelaciones = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +71,7 @@
             // 
             // btnFamiliasForm
             // 
-            this.btnFamiliasForm.Location = new System.Drawing.Point(1032, 134);
+            this.btnFamiliasForm.Location = new System.Drawing.Point(1030, 115);
             this.btnFamiliasForm.Name = "btnFamiliasForm";
             this.btnFamiliasForm.Size = new System.Drawing.Size(75, 23);
             this.btnFamiliasForm.TabIndex = 2;
@@ -79,7 +81,7 @@
             // 
             // btnLugaresForm
             // 
-            this.btnLugaresForm.Location = new System.Drawing.Point(1032, 344);
+            this.btnLugaresForm.Location = new System.Drawing.Point(1032, 338);
             this.btnLugaresForm.Name = "btnLugaresForm";
             this.btnLugaresForm.Size = new System.Drawing.Size(75, 23);
             this.btnLugaresForm.TabIndex = 3;
@@ -89,7 +91,7 @@
             // 
             // btnEventos
             // 
-            this.btnEventos.Location = new System.Drawing.Point(1032, 309);
+            this.btnEventos.Location = new System.Drawing.Point(1033, 310);
             this.btnEventos.Margin = new System.Windows.Forms.Padding(2);
             this.btnEventos.Name = "btnEventos";
             this.btnEventos.Size = new System.Drawing.Size(75, 23);
@@ -100,7 +102,7 @@
             // 
             // btnProtagonistas
             // 
-            this.btnProtagonistas.Location = new System.Drawing.Point(1032, 166);
+            this.btnProtagonistas.Location = new System.Drawing.Point(1030, 143);
             this.btnProtagonistas.Name = "btnProtagonistas";
             this.btnProtagonistas.Size = new System.Drawing.Size(75, 23);
             this.btnProtagonistas.TabIndex = 5;
@@ -110,7 +112,7 @@
             // 
             // btnRelacionesSP
             // 
-            this.btnRelacionesSP.Location = new System.Drawing.Point(1032, 198);
+            this.btnRelacionesSP.Location = new System.Drawing.Point(1030, 171);
             this.btnRelacionesSP.Name = "btnRelacionesSP";
             this.btnRelacionesSP.Size = new System.Drawing.Size(75, 23);
             this.btnRelacionesSP.TabIndex = 6;
@@ -120,7 +122,7 @@
             // 
             // btnCargo
             // 
-            this.btnCargo.Location = new System.Drawing.Point(1030, 230);
+            this.btnCargo.Location = new System.Drawing.Point(1028, 199);
             this.btnCargo.Name = "btnCargo";
             this.btnCargo.Size = new System.Drawing.Size(75, 23);
             this.btnCargo.TabIndex = 7;
@@ -128,19 +130,19 @@
             this.btnCargo.UseVisualStyleBackColor = true;
             this.btnCargo.Click += new System.EventHandler(this.btnCargo_Click);
             // 
-            // btnRoles
+            // btnRol
             // 
-            this.btnRoles.Location = new System.Drawing.Point(1032, 379);
-            this.btnRoles.Name = "btnRoles";
-            this.btnRoles.Size = new System.Drawing.Size(75, 23);
-            this.btnRoles.TabIndex = 8;
-            this.btnRoles.Text = "Roles";
-            this.btnRoles.UseVisualStyleBackColor = true;
-            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
+            this.btnRol.Location = new System.Drawing.Point(1028, 227);
+            this.btnRol.Name = "btnRol";
+            this.btnRol.Size = new System.Drawing.Size(75, 23);
+            this.btnRol.TabIndex = 8;
+            this.btnRol.Text = "Rol";
+            this.btnRol.UseVisualStyleBackColor = true;
+            this.btnRol.Click += new System.EventHandler(this.btnRol_Click);
             // 
             // buttonTipoCargo
             // 
-            this.buttonTipoCargo.Location = new System.Drawing.Point(1032, 414);
+            this.buttonTipoCargo.Location = new System.Drawing.Point(1032, 367);
             this.buttonTipoCargo.Name = "buttonTipoCargo";
             this.buttonTipoCargo.Size = new System.Drawing.Size(75, 23);
             this.buttonTipoCargo.TabIndex = 9;
@@ -156,14 +158,35 @@
             this.labelActualizar.TabIndex = 10;
             this.labelActualizar.Text = "<--  doble click     actualizar";
             // 
+            // btnRoles
+            // 
+            this.btnRoles.Location = new System.Drawing.Point(1033, 397);
+            this.btnRoles.Name = "btnRoles";
+            this.btnRoles.Size = new System.Drawing.Size(75, 23);
+            this.btnRoles.TabIndex = 11;
+            this.btnRoles.Text = "Roles";
+            this.btnRoles.UseVisualStyleBackColor = true;
+            this.btnRoles.Click += new System.EventHandler(this.btnRoles_Click);
+            // 
+            // btnTiposRelaciones
+            // 
+            this.btnTiposRelaciones.Location = new System.Drawing.Point(1033, 282);
+            this.btnTiposRelaciones.Name = "btnTiposRelaciones";
+            this.btnTiposRelaciones.Size = new System.Drawing.Size(75, 23);
+            this.btnTiposRelaciones.TabIndex = 12;
+            this.btnTiposRelaciones.Text = "Tipos Relac.";
+            this.btnTiposRelaciones.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1115, 450);
+            this.Controls.Add(this.btnTiposRelaciones);
+            this.Controls.Add(this.btnRoles);
             this.Controls.Add(this.labelActualizar);
             this.Controls.Add(this.buttonTipoCargo);
-            this.Controls.Add(this.btnRoles);
+            this.Controls.Add(this.btnRol);
             this.Controls.Add(this.btnCargo);
             this.Controls.Add(this.btnRelacionesSP);
             this.Controls.Add(this.btnProtagonistas);
@@ -189,9 +212,11 @@
         private System.Windows.Forms.Button btnProtagonistas;
         private System.Windows.Forms.Button btnRelacionesSP;
         private System.Windows.Forms.Button btnCargo;
-        private System.Windows.Forms.Button btnRoles;
+        private System.Windows.Forms.Button btnRol;
         private System.Windows.Forms.Button buttonTipoCargo;
         private System.Windows.Forms.Label labelActualizar;
+        private System.Windows.Forms.Button btnRoles;
+        private System.Windows.Forms.Button btnTiposRelaciones;
     }
 }
 

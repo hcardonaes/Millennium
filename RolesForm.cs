@@ -83,6 +83,7 @@ namespace Millennium
             string connectionString = "Data Source=Millennium.db;Version=3;";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
+
                 try
                 {
                     connection.Open();
@@ -205,5 +206,41 @@ namespace Millennium
             return null;
         }
 
+        private void cmbEvento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string connectionString = "Data Source=Millennium.db;Version=3;";
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+
+                try
+                {
+                    //cargar los textBox con las fechas del evento seleccionado 
+
+                    connection.Open();
+                    string query = "SELECT fecha_inicio, fecha_fin FROM eventos WHERE id = @id";
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id", cmbEvento.SelectedValue);
+                        using (SQLiteDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtDiaInicio.Text = reader["fecha_inicio"].ToString().Substring(8, 2);
+                                txtMesInicio.Text = reader["fecha_inicio"].ToString().Substring(5, 2);
+                                txtAñoInicio.Text = reader["fecha_inicio"].ToString().Substring(0, 4);
+                                txtDiaFin.Text = reader["fecha_fin"].ToString().Substring(8, 2);
+                                txtMesFin.Text = reader["fecha_fin"].ToString().Substring(5, 2);
+                                txtAñoFin.Text = reader["fecha_fin"].ToString().Substring(0, 4);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al cargar fechas del evento: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
     }
 }

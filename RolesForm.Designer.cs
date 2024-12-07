@@ -117,6 +117,7 @@
             this.cmbEvento.Name = "cmbEvento";
             this.cmbEvento.Size = new System.Drawing.Size(121, 21);
             this.cmbEvento.TabIndex = 39;
+            this.cmbEvento.SelectedIndexChanged += new System.EventHandler(this.cmbEvento_SelectedIndexChanged);
             // 
             // cmbPersonaje
             // 

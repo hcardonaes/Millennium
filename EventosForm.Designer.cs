@@ -108,7 +108,7 @@
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(91, 33);
             this.btnGuardarCambios.TabIndex = 12;
-            this.btnGuardarCambios.Text = "Guarda";
+            this.btnGuardarCambios.Text = "Actualiza";
             this.btnGuardarCambios.UseVisualStyleBackColor = true;
             this.btnGuardarCambios.Click += new System.EventHandler(this.btnGuardarCambios_Click);
             // 
