@@ -15,6 +15,14 @@ namespace Millennium
             CargarRoles();
             CargarEventos();
             CargarRolesAsignados();
+            // Valores por defecto para las fechas de inicio y fin
+            //txtDiaInicio.Text = "1";
+            //txtMesInicio.Text = "1";
+            //txtAñoInicio.Text = "1";
+
+            //txtDiaFin.Text = "1";
+            //txtMesFin.Text = "1";
+            //txtAñoFin.Text = "1";
 
         }
 

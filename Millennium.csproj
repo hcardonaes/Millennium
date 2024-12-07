@@ -97,12 +97,6 @@
     <Compile Include="ProtagonistasForm.Designer.cs">
       <DependentUpon>ProtagonistasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RelacionesSociopoliticasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RelacionesSociopoliticasForm.Designer.cs">
-      <DependentUpon>RelacionesSociopoliticasForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="RolesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,9 +153,6 @@
     </Compile>
     <EmbeddedResource Include="ProtagonistasForm.resx">
       <DependentUpon>ProtagonistasForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RelacionesSociopoliticasForm.resx">
-      <DependentUpon>RelacionesSociopoliticasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RolesForm.resx">
       <DependentUpon>RolesForm.cs</DependentUpon>
