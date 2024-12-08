@@ -42,6 +42,8 @@
             this.txtAñoInicio = new System.Windows.Forms.TextBox();
             this.txtMesInicio = new System.Windows.Forms.TextBox();
             this.txtDiaInicio = new System.Windows.Forms.TextBox();
+            this.lblEvento = new System.Windows.Forms.Label();
+            this.lblLugar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +66,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(68, 20);
             this.txtId.TabIndex = 1;
+            this.txtId.Visible = false;
             // 
             // txtNombre
             // 
@@ -84,15 +87,16 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(8, 152);
+            this.txtDescripcion.Location = new System.Drawing.Point(10, 138);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(91, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(126, 108);
             this.txtDescripcion.TabIndex = 10;
             // 
             // btnAgregarEvento
             // 
-            this.btnAgregarEvento.Location = new System.Drawing.Point(9, 172);
+            this.btnAgregarEvento.Location = new System.Drawing.Point(11, 246);
             this.btnAgregarEvento.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarEvento.Name = "btnAgregarEvento";
             this.btnAgregarEvento.Size = new System.Drawing.Size(91, 33);
@@ -103,7 +107,7 @@
             // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.Location = new System.Drawing.Point(9, 205);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(11, 279);
             this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
             this.btnGuardarCambios.Size = new System.Drawing.Size(91, 33);
@@ -114,7 +118,7 @@
             // 
             // btnEliminarEvento
             // 
-            this.btnEliminarEvento.Location = new System.Drawing.Point(9, 238);
+            this.btnEliminarEvento.Location = new System.Drawing.Point(11, 312);
             this.btnEliminarEvento.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarEvento.Name = "btnEliminarEvento";
             this.btnEliminarEvento.Size = new System.Drawing.Size(91, 33);
@@ -164,11 +168,31 @@
             this.txtDiaInicio.Size = new System.Drawing.Size(39, 20);
             this.txtDiaInicio.TabIndex = 27;
             // 
+            // lblEvento
+            // 
+            this.lblEvento.AutoSize = true;
+            this.lblEvento.Location = new System.Drawing.Point(82, 41);
+            this.lblEvento.Name = "lblEvento";
+            this.lblEvento.Size = new System.Drawing.Size(41, 13);
+            this.lblEvento.TabIndex = 33;
+            this.lblEvento.Text = "Evento";
+            // 
+            // lblLugar
+            // 
+            this.lblLugar.AutoSize = true;
+            this.lblLugar.Location = new System.Drawing.Point(97, 120);
+            this.lblLugar.Name = "lblLugar";
+            this.lblLugar.Size = new System.Drawing.Size(34, 13);
+            this.lblLugar.TabIndex = 34;
+            this.lblLugar.Text = "Lugar";
+            // 
             // EventosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 360);
+            this.Controls.Add(this.lblLugar);
+            this.Controls.Add(this.lblEvento);
             this.Controls.Add(this.txtAñoFin);
             this.Controls.Add(this.txtMesFin);
             this.Controls.Add(this.txtDiaFin);
@@ -208,5 +232,7 @@
         private System.Windows.Forms.TextBox txtAñoInicio;
         private System.Windows.Forms.TextBox txtMesInicio;
         private System.Windows.Forms.TextBox txtDiaInicio;
+        private System.Windows.Forms.Label lblEvento;
+        private System.Windows.Forms.Label lblLugar;
     }
 }

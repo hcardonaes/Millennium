@@ -138,16 +138,14 @@ namespace MillenniumApp
             return null;
         }
 
+
         private void dgvEventos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Verificar que el índice de fila es válido
+            //carga comboBox y testBoxes con los valores del row seleccionado
             if (e.RowIndex >= 0 && e.RowIndex < dgvEventos.Rows.Count)
             {
-                // Obtener la fila seleccionada
                 DataGridViewRow row = dgvEventos.Rows[e.RowIndex];
-
-                // Cargar los valores en los TextBox
-                txtId.Text = row.Cells["id"].Value.ToString(); // Asegúrate de que el nombre de la columna coincide
+                txtId.Text = row.Cells["id"].Value.ToString();
                 txtNombre.Text = row.Cells["nombre"].Value.ToString();
                 txtDiaInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "dia");
                 txtMesInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "mes");
@@ -155,8 +153,9 @@ namespace MillenniumApp
                 txtDiaFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "dia");
                 txtMesFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "mes");
                 txtAñoFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "anio");
-                cmbLugar.SelectedValue = row.Cells["lugar"].Value; // Asegúrate de que el valor coincide con el ComboBox
+                cmbLugar.SelectedValue = Convert.ToInt32(row.Cells["id"].Value);
                 txtDescripcion.Text = row.Cells["descripcion"].Value.ToString();
+
             }
         }
 
@@ -225,5 +224,30 @@ namespace MillenniumApp
             }
         }
 
+        private void dgvEventos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //carga comboBox y testBoxes con los valores del row seleccionado
+            if (e.RowIndex >= 0 && e.RowIndex < dgvEventos.Rows.Count)
+            {
+                DataGridViewRow row = dgvEventos.Rows[e.RowIndex];
+                txtId.Text = row.Cells["id"].Value.ToString();
+                txtNombre.Text = row.Cells["nombre"].Value.ToString();
+                txtDiaInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "dia");
+                txtMesInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "mes");
+                txtAñoInicio.Text = ObtenerParteFecha(row.Cells["fecha_inicio"].Value.ToString(), "anio");
+                txtDiaFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "dia");
+                txtMesFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "mes");
+                txtAñoFin.Text = ObtenerParteFecha(row.Cells["fecha_fin"].Value.ToString(), "anio");
+                if (row.Cells["lugar"].Value != null)
+                {
+                    cmbLugar.SelectedValue = Convert.ToInt32(row.Cells["lugar"].Value);
+                }
+                else
+                {
+                    cmbLugar.SelectedValue = -1; // or any default value
+                }
+                txtDescripcion.Text = row.Cells["descripcion"].Value.ToString();
+            }
+        }
     }
 }

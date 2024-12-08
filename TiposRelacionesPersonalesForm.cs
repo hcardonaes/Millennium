@@ -5,15 +5,15 @@ using System.Windows.Forms;
 
 namespace MillenniumApp
 {
-    public partial class TiposDeRol : Form
+    public partial class TiposRelacionesPersonalesForm : Form
     {
-        public TiposDeRol()
+        public TiposRelacionesPersonalesForm()
         {
             InitializeComponent();
-            CargarTiposDeRol();
+            CargarTiposRelacionesPersonalesForm();
 
         }
-        private void CargarTiposDeRol()
+        private void CargarTiposRelacionesPersonalesForm()
         {
             string connectionString = "Data Source=Millennium.db;Version=3;";
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -22,19 +22,19 @@ namespace MillenniumApp
                 {
                     connection.Open();
                     // Consulta para obtener los tipos de roles
-                    string query = "SELECT * FROM roles";
+                    string query = "SELECT * FROM tipos_relaciones_personales";
                     using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                     {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
-                        cmbTiposDeRoles.DataSource = dataTable;
-                        cmbTiposDeRoles.DisplayMember = "nombre";
-                        cmbTiposDeRoles.ValueMember = "id";
+                        cmbTiposDeRelacionesPersonales.DataSource = dataTable;
+                        cmbTiposDeRelacionesPersonales.DisplayMember = "nombre";
+                        cmbTiposDeRelacionesPersonales.ValueMember = "id";
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al cargar los tipos de rol: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al cargar los tipos de relacion: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -44,7 +44,7 @@ namespace MillenniumApp
             // Validar que el nombre no esté vacío
             if (string.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("El nombre del tipo de rol no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El nombre del tipo de relacion no puede estar vacío", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -54,23 +54,23 @@ namespace MillenniumApp
                 try
                 {
                     connection.Open();
-                    string query = "INSERT INTO roles (nombre) VALUES (@nombre)";
+                    string query = "INSERT INTO tipos_relaciones_personales (nombre) VALUES (@nombre)";
                     using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@nombre", txtNombre.Text);
                         command.ExecuteNonQuery();
                     }
                     // Recargar los tipos de cargos
-                    CargarTiposDeRol();
+                    CargarTiposRelacionesPersonalesForm();
                     //mostrar mensaje de exito
-                    MessageBox.Show("Tipo de rol agregado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tipo de relacion agregado correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //expandir el combobox
-                    cmbTiposDeRoles.DroppedDown = true;
+                    cmbTiposDeRelacionesPersonales.DroppedDown = true;
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al agregar el tipo de rol: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al agregar el tipo de relacion: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

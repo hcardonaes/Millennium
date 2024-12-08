@@ -131,10 +131,6 @@ namespace MillenniumApp
 
         }
 
-        // ...
-
-
-
         private void btnRol_Click(object sender, EventArgs e)
         {
             RolesForm rolesForm = new RolesForm();
@@ -145,6 +141,13 @@ namespace MillenniumApp
         {
             TiposDeRol tiposDeRol = new TiposDeRol();
             tiposDeRol.Show();
+        }
+
+        private void btnTiposRelaciones_Click(object sender, EventArgs e)
+        {
+            TiposRelacionesPersonalesForm tiposRelacionesPersonalesForm = new TiposRelacionesPersonalesForm();
+            tiposRelacionesPersonalesForm.Show();
+
         }
     }
 }

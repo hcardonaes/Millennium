@@ -176,6 +176,7 @@
             this.btnTiposRelaciones.TabIndex = 12;
             this.btnTiposRelaciones.Text = "Tipos Relac.";
             this.btnTiposRelaciones.UseVisualStyleBackColor = true;
+            this.btnTiposRelaciones.Click += new System.EventHandler(this.btnTiposRelaciones_Click);
             // 
             // Form1
             // 
