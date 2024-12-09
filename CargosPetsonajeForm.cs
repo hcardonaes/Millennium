@@ -193,9 +193,5 @@ namespace MillenniumApp
 
         }
 
-        private void CargosPersonajesForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
