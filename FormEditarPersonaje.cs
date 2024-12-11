@@ -91,6 +91,8 @@ namespace MillenniumApp
                     MessageBox.Show("Error al actualizar el personaje: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            DatosModificados?.Invoke(this, EventArgs.Empty);
+
         }
 
         private string ObtenerParteFecha(string fecha, string parte)

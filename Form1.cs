@@ -54,6 +54,7 @@ namespace MillenniumApp
 
                 // Abrir el formulario de edición
                 FormEditarPersonaje formEditar = new FormEditarPersonaje(id);
+                formEditar.DatosModificados += FormEditar_DatosModificados;
                 formEditar.Show();
 
                 // Recargar los datos después de editar un personaje
@@ -65,6 +66,7 @@ namespace MillenniumApp
         {
             // Abrir el formulario de agregar personaje
             FormAgregarPersonaje formAgregar = new FormAgregarPersonaje();
+            formAgregar.DatosModificados += FormAgregar_DatosModificados;
             formAgregar.Show();
 
             // Recargar los datos después de agregar un personaje
@@ -83,6 +85,11 @@ namespace MillenniumApp
             // Crear una instancia de LugaresForm
             LugaresForm lugaresForm = new LugaresForm();
             lugaresForm.Show();
+        }
+
+        private void FormAgregar_DatosModificados(object sender, EventArgs e)
+        {
+            CargarDatosPersonajes();
         }
 
         private void btnEventosForm_Click(object sender, EventArgs e)
@@ -148,6 +155,11 @@ namespace MillenniumApp
             TiposRelacionesPersonalesForm tiposRelacionesPersonalesForm = new TiposRelacionesPersonalesForm();
             tiposRelacionesPersonalesForm.Show();
 
+        }
+
+        private void FormEditar_DatosModificados(object sender, EventArgs e)
+        {
+            CargarDatosPersonajes();
         }
     }
 }

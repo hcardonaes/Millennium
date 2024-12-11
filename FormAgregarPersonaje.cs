@@ -7,6 +7,7 @@ namespace MillenniumApp
 {
     public partial class FormAgregarPersonaje : Form
     {
+        public event EventHandler DatosModificados;
         public FormAgregarPersonaje()
         {
             InitializeComponent();
@@ -100,7 +101,8 @@ namespace MillenniumApp
                     MessageBox.Show("Error al agregar el personaje: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
+            // Disparar el evento DatosModificados
+            DatosModificados?.Invoke(this, EventArgs.Empty);
         }
     }
 }

@@ -193,5 +193,103 @@ namespace MillenniumApp
 
         }
 
+        private void dgvCargos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //cargar datos de la fila seleccionada en los campos de texto para editar
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvCargos.Rows[e.RowIndex];
+                cmbPersonaje.Text = row.Cells["personaje"].Value.ToString();
+                cmbInstitucion.Text = row.Cells["institucion"].Value.ToString();
+                cmbTiposDeCargos.Text = row.Cells["tipo_cargo"].Value.ToString();
+                //Si la fecha de inicio no es nula, cargarla en los campos de texto
+                if (row.Cells["fecha_inicio"].Value != DBNull.Value)
+                {
+                    txtDiaInicio.Text = row.Cells["fecha_inicio"].Value.ToString().Substring(8, 2);
+                    txtMesInicio.Text = row.Cells["fecha_inicio"].Value.ToString().Substring(5, 2);
+                    txtAñoInicio.Text = row.Cells["fecha_inicio"].Value.ToString().Substring(0, 4);
+                }
+
+                if (row.Cells["fecha_fin"].Value != DBNull.Value)
+                {
+                    txtDiaFin.Text = row.Cells["fecha_fin"].Value.ToString().Substring(8, 2);
+                    txtMesFin.Text = row.Cells["fecha_fin"].Value.ToString().Substring(5, 2);
+                    txtAñoFin.Text = row.Cells["fecha_fin"].Value.ToString().Substring(0, 4);
+                }
+            }
+
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            //Actualizar la base de datos con los campos de texto de los boxes
+
+            int personaje1 = Convert.ToInt32(cmbPersonaje.SelectedValue);
+            int institucion = Convert.ToInt32(cmbInstitucion.SelectedValue);
+            int tipoCargo = Convert.ToInt32(cmbTiposDeCargos.SelectedValue);
+            string fechaInicio = FormatearFecha(txtDiaInicio.Text, txtMesInicio.Text, txtAñoInicio.Text);
+            string fechaFin = FormatearFecha(txtDiaFin.Text, txtMesFin.Text, txtAñoFin.Text);
+
+            string connectionString = "Data Source=Millennium.db;Version=3;";
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    //Actualizar la relación en la base de datos
+                    string query = "UPDATE cargos SET personaje_id = @id1, institucion_id = @id2, tipo_cargo_id = @tipoRelacion, fecha_inicio = @fechaInicio, fecha_fin = @fechaFin " +
+                                   "WHERE personaje_id = @id1 AND institucion_id = @id2 AND tipo_cargo_id = @tipoRelacion";
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@id1", personaje1);
+                        command.Parameters.AddWithValue("@id2", institucion);
+                        command.Parameters.AddWithValue("@tipoRelacion", tipoCargo);
+                        command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+                        command.Parameters.AddWithValue("@fechaFin", string.IsNullOrWhiteSpace(fechaFin) ? (object)DBNull.Value : fechaFin);
+                        command.ExecuteNonQuery();
+                    }
+                    MessageBox.Show("Relación actualizada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarCargos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al actualizar la relación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            //    //Actualizar la relación seleccionada
+            //    int personaje1 = Convert.ToInt32(cmbPersonaje.SelectedValue);
+            //    int institucion = Convert.ToInt32(cmbInstitucion.SelectedValue);
+            //    int tipoCargo = Convert.ToInt32(cmbTiposDeCargos.SelectedValue);
+            //    string fechaInicio = FormatearFecha(txtDiaInicio.Text, txtMesInicio.Text, txtAñoInicio.Text);
+            //    string fechaFin = FormatearFecha(txtDiaFin.Text, txtMesFin.Text, txtAñoFin.Text);
+
+            //    string connectionString = "Data Source=Millennium.db;Version=3;";
+            //    using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            //    {
+            //        try
+            //        {
+            //            connection.Open();
+            //            //Actualizar la relación en la base de datos
+            //            string query = "UPDATE cargos SET personaje_id = @id1, institucion_id = @id2, tipo_cargo_id = @tipoRelacion, fecha_inicio = @fechaInicio, fecha_fin = @fechaFin " +
+            //                           "WHERE personaje_id = @id1 AND institucion_id = @id2 AND tipo_cargo_id = @tipoRelacion";
+            //            using (SQLiteCommand command = new SQLiteCommand(query, connection))
+            //            {
+            //                command.Parameters.AddWithValue("@id1", personaje1);
+            //                command.Parameters.AddWithValue("@id2", institucion);
+            //                command.Parameters.AddWithValue("@tipoRelacion", tipoCargo);
+            //                command.Parameters.AddWithValue("@fechaInicio", fechaInicio);
+            //                command.Parameters.AddWithValue("@fechaFin", string.IsNullOrWhiteSpace(fechaFin) ? (object)DBNull.Value : fechaFin);
+            //                command.ExecuteNonQuery();
+            //            }
+            //            MessageBox.Show("Relación actualizada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //            CargarCargos();
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("Error al actualizar la relación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+            //    }
+            //}
+        }
     }
 }
