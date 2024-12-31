@@ -7,6 +7,7 @@ namespace MillenniumApp
 {
     public partial class LugaresForm : Form
     {
+        public event EventHandler LugarAñadido;
         public LugaresForm()
         {
             InitializeComponent();
@@ -88,6 +89,7 @@ namespace MillenniumApp
                     }
 
                     MessageBox.Show("Lugar agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LugarAñadido?.Invoke(this, EventArgs.Empty);
                     CargarLugares();
                 }
                 catch (Exception ex)

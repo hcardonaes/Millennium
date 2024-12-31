@@ -44,6 +44,7 @@
             this.txtDiaInicio = new System.Windows.Forms.TextBox();
             this.lblEvento = new System.Windows.Forms.Label();
             this.lblLugar = new System.Windows.Forms.Label();
+            this.btnAbrirLugaresForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEventos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,11 +187,22 @@
             this.lblLugar.TabIndex = 34;
             this.lblLugar.Text = "Lugar";
             // 
+            // btnAbrirLugaresForm
+            // 
+            this.btnAbrirLugaresForm.Location = new System.Drawing.Point(108, 255);
+            this.btnAbrirLugaresForm.Name = "btnAbrirLugaresForm";
+            this.btnAbrirLugaresForm.Size = new System.Drawing.Size(51, 77);
+            this.btnAbrirLugaresForm.TabIndex = 35;
+            this.btnAbrirLugaresForm.Text = "button1";
+            this.btnAbrirLugaresForm.UseVisualStyleBackColor = true;
+            this.btnAbrirLugaresForm.Click += new System.EventHandler(this.btnAbrirLugaresForm_Click);
+            // 
             // EventosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 360);
+            this.Controls.Add(this.btnAbrirLugaresForm);
             this.Controls.Add(this.lblLugar);
             this.Controls.Add(this.lblEvento);
             this.Controls.Add(this.txtAñoFin);
@@ -234,5 +246,6 @@
         private System.Windows.Forms.TextBox txtDiaInicio;
         private System.Windows.Forms.Label lblEvento;
         private System.Windows.Forms.Label lblLugar;
+        private System.Windows.Forms.Button btnAbrirLugaresForm;
     }
 }

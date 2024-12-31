@@ -7,6 +7,7 @@ namespace MillenniumApp
     public partial class FormEditarPersonaje : Form
     {
         private int personajeId;
+        public EventHandler DatosModificados;
 
         public FormEditarPersonaje(int id)
         {

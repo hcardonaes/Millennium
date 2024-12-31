@@ -138,7 +138,6 @@ namespace MillenniumApp
             return null;
         }
 
-
         private void dgvEventos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //carga comboBox y testBoxes con los valores del row seleccionado
@@ -248,6 +247,18 @@ namespace MillenniumApp
                 }
                 txtDescripcion.Text = row.Cells["descripcion"].Value.ToString();
             }
+        }
+
+        private void btnAbrirLugaresForm_Click(object sender, EventArgs e)
+        {
+            LugaresForm lugaresForm = new LugaresForm();
+            lugaresForm.LugarAñadido += LugaresForm_LugarAñadido;
+            lugaresForm.Show();
+        }
+
+        private void LugaresForm_LugarAñadido(object sender, EventArgs e)
+        {
+            CargarLugares();
         }
     }
 }

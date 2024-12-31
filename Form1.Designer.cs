@@ -48,6 +48,9 @@
             // 
             this.dgvPersonajes.AllowUserToAddRows = false;
             this.dgvPersonajes.AllowUserToDeleteRows = false;
+            this.dgvPersonajes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPersonajes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvPersonajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPersonajes.Location = new System.Drawing.Point(13, 13);
@@ -61,6 +64,7 @@
             // 
             // btnAgregarPersonaje
             // 
+            this.btnAgregarPersonaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarPersonaje.Location = new System.Drawing.Point(1032, 12);
             this.btnAgregarPersonaje.Name = "btnAgregarPersonaje";
             this.btnAgregarPersonaje.Size = new System.Drawing.Size(75, 61);
@@ -71,6 +75,7 @@
             // 
             // btnFamiliasForm
             // 
+            this.btnFamiliasForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFamiliasForm.Location = new System.Drawing.Point(1030, 115);
             this.btnFamiliasForm.Name = "btnFamiliasForm";
             this.btnFamiliasForm.Size = new System.Drawing.Size(75, 23);
@@ -81,6 +86,7 @@
             // 
             // btnLugaresForm
             // 
+            this.btnLugaresForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLugaresForm.Location = new System.Drawing.Point(1032, 338);
             this.btnLugaresForm.Name = "btnLugaresForm";
             this.btnLugaresForm.Size = new System.Drawing.Size(75, 23);
@@ -91,6 +97,7 @@
             // 
             // btnEventos
             // 
+            this.btnEventos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEventos.Location = new System.Drawing.Point(1033, 310);
             this.btnEventos.Margin = new System.Windows.Forms.Padding(2);
             this.btnEventos.Name = "btnEventos";
@@ -102,6 +109,7 @@
             // 
             // btnProtagonistas
             // 
+            this.btnProtagonistas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProtagonistas.Location = new System.Drawing.Point(1030, 143);
             this.btnProtagonistas.Name = "btnProtagonistas";
             this.btnProtagonistas.Size = new System.Drawing.Size(75, 23);
@@ -112,6 +120,7 @@
             // 
             // btnRelacionesSP
             // 
+            this.btnRelacionesSP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRelacionesSP.Location = new System.Drawing.Point(1030, 171);
             this.btnRelacionesSP.Name = "btnRelacionesSP";
             this.btnRelacionesSP.Size = new System.Drawing.Size(75, 23);
@@ -122,6 +131,7 @@
             // 
             // btnCargo
             // 
+            this.btnCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCargo.Location = new System.Drawing.Point(1028, 199);
             this.btnCargo.Name = "btnCargo";
             this.btnCargo.Size = new System.Drawing.Size(75, 23);
@@ -132,6 +142,7 @@
             // 
             // btnRol
             // 
+            this.btnRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRol.Location = new System.Drawing.Point(1028, 227);
             this.btnRol.Name = "btnRol";
             this.btnRol.Size = new System.Drawing.Size(75, 23);
@@ -142,6 +153,7 @@
             // 
             // buttonTipoCargo
             // 
+            this.buttonTipoCargo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonTipoCargo.Location = new System.Drawing.Point(1032, 367);
             this.buttonTipoCargo.Name = "buttonTipoCargo";
             this.buttonTipoCargo.Size = new System.Drawing.Size(75, 23);
@@ -152,6 +164,7 @@
             // 
             // labelActualizar
             // 
+            this.labelActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelActualizar.Location = new System.Drawing.Point(1030, 76);
             this.labelActualizar.Name = "labelActualizar";
             this.labelActualizar.Size = new System.Drawing.Size(77, 31);
@@ -160,6 +173,7 @@
             // 
             // btnRoles
             // 
+            this.btnRoles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRoles.Location = new System.Drawing.Point(1033, 397);
             this.btnRoles.Name = "btnRoles";
             this.btnRoles.Size = new System.Drawing.Size(75, 23);
@@ -170,6 +184,7 @@
             // 
             // btnTiposRelaciones
             // 
+            this.btnTiposRelaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTiposRelaciones.Location = new System.Drawing.Point(1033, 282);
             this.btnTiposRelaciones.Name = "btnTiposRelaciones";
             this.btnTiposRelaciones.Size = new System.Drawing.Size(75, 23);
@@ -182,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1115, 450);
             this.Controls.Add(this.btnTiposRelaciones);
             this.Controls.Add(this.btnRoles);
